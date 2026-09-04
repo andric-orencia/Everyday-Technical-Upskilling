@@ -1,3 +1,2 @@
-n = int(input())
-m = int(input())
-print(n - m)
+# Draga Frá
+# TODO: Solve this problem yourself.

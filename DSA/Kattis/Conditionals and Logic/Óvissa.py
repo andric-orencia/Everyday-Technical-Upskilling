@@ -1,1 +1,2 @@
-print(len(str(input())))
+# Óvissa
+# TODO: Solve this problem yourself.

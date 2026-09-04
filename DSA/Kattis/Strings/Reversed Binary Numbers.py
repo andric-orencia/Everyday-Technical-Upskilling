@@ -1,1 +1,2 @@
-print(int((str(bin(int(input()))[::-1])[:-2]), 2))
+# Reversed Binary Numbers
+# TODO: Solve this problem yourself.

@@ -1,2 +1,2 @@
-# Palindrome Number
+# Which is Greater
 # TODO: Solve this problem yourself.

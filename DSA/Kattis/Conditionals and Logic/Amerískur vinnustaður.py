@@ -1,1 +1,2 @@
-print(int(input()) * 0.09144)
+# Amerískur vinnustaður
+# TODO: Solve this problem yourself.

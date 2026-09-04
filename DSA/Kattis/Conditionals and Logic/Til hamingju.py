@@ -1,1 +1,2 @@
-print("TIL HAMINGJU MED AFMAELID FORRITUNARKEPPNI FRAMHALDSSKOLANNA!")
+# Til hamingju
+# TODO: Solve this problem yourself.

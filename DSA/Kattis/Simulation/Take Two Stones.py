@@ -1,1 +1,2 @@
-print("Alice") if (int(input()) % 2 == 1) else print("Bob")
+# Take Two Stones
+# TODO: Solve this problem yourself.

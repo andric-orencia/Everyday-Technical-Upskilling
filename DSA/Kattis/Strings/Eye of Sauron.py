@@ -1,3 +1,2 @@
-left, right = input().split("()")
-
-print("fix" if len(left) != len(right) else "correct")
+# Eye of Sauron
+# TODO: Solve this problem yourself.

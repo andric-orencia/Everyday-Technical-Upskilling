@@ -1,2 +1,2 @@
-n = int(input())
-print(len(list(filter(lambda x: (x < 0), map(int, input().split())))))
+# Cold-puter Science
+# TODO: Solve this problem yourself.

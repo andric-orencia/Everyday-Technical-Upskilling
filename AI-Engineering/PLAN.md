@@ -1,7 +1,6 @@
 # AI Engineering Interview Plan
 
 Target: interview-ready by **October 1, 2026**  
-Background: SRE @ P&G, LangGraph/LangChain in prod, two NLP publications, MS CS (3.9 GPA)
 
 ---
 
@@ -62,7 +61,7 @@ Phase 7 — Safety & Alignment      (Week 7)
 
 ## Phase 3 — Agents & Tool Use
 
-**Goal:** Name agent patterns precisely. Explain your P&G work in architectural terms.
+**Goal:** Name agent patterns precisely and reason about agent systems in architectural terms.
 
 | Session | Topic | Key Concepts |
 |---------|-------|-------------|

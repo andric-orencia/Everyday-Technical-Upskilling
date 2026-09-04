@@ -1,2 +1,2 @@
-recipient = str(input())
-print("{},\n{}".format("Kvedja", recipient))
+# Kveðja
+# TODO: Solve this problem yourself.

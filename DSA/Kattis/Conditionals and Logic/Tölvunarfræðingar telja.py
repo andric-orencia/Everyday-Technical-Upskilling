@@ -1,1 +1,2 @@
-print(int(input()) - 1)
+# Tölvunarfræðingar telja
+# TODO: Solve this problem yourself.

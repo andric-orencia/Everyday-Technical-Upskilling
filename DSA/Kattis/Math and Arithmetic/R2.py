@@ -1,3 +1,2 @@
-x, y = list(map(int, input().split()))
-
-print(2 * y - x)
+# R2
+# TODO: Solve this problem yourself.

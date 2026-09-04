@@ -1,1 +1,2 @@
-print(input().replace(" ", ""))
+# Leyniþjónusta
+# TODO: Solve this problem yourself.

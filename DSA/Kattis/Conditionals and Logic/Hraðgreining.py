@@ -1,3 +1,2 @@
-dna = str(input())
-
-print("Veikur!" if dna.find("COV") != -1 else "Ekki veikur!")
+# Hraðgreining
+# TODO: Solve this problem yourself.

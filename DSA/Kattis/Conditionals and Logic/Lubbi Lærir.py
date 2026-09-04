@@ -1,2 +1,2 @@
-word = str(input())
-print(word[0])
+# Lubbi Lærir
+# TODO: Solve this problem yourself.

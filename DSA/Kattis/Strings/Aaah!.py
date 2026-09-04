@@ -1,3 +1,2 @@
-m = str(input())
-d = str(input())
-print("go") if (len(m) >= len(d)) else print("no")
+# Aaah!
+# TODO: Solve this problem yourself.

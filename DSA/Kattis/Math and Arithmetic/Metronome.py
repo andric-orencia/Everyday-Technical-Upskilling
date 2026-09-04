@@ -1,1 +1,2 @@
-print(int(input()) / 4)
+# Metronome
+# TODO: Solve this problem yourself.

@@ -1,6 +1,6 @@
-# Kattis Solutions
+# Kattis Practice
 
-144 problems solved from [open.kattis.com](https://open.kattis.com), organized by problem type.
+A curated set of practice problems from [open.kattis.com](https://open.kattis.com), organized by problem type. Solve each one yourself in the matching `.py` file.
 
 Kattis problems are generally lighter on data structures than LeetCode — most test clean I/O handling, arithmetic, and logical reasoning. The difficulty here is mostly about reading the problem statement carefully and handling edge cases.
 
@@ -20,7 +20,7 @@ Kattis problems are generally lighter on data structures than LeetCode — most 
 
 ## Conditionals and Logic (67)
 
-Problems solved with branching logic — `if/elif/else`, boolean flags, and reading conditions from the problem statement precisely.
+Problems that use branching logic — `if/elif/else`, boolean flags, and reading conditions from the problem statement precisely.
 
 | Problem | Link |
 |---------|------|

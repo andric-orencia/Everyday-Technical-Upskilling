@@ -1,2 +1,2 @@
-reversed = str(input())[::-1]
-print(reversed)
+# Viðsnúningur
+# TODO: Solve this problem yourself.

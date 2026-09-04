@@ -1,1 +1,2 @@
-print(round((float(input()) * 5280 * 1000) / (4854)))
+# Roaming Romans
+# TODO: Solve this problem yourself.

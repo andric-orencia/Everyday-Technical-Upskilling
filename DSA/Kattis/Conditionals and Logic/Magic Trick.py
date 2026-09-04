@@ -1,3 +1,2 @@
-word = input()
-
-print(1 if len(set(word)) == len(word) else 0)
+# Magic Trick
+# TODO: Solve this problem yourself.

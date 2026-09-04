@@ -18,11 +18,11 @@ These topics require no prior DSA knowledge. Get comfortable before moving on.
 
 | Topic | Status | Notes |
 |-------|--------|-------|
-| Arrays and Hashing | ✅ | Contains Duplicate, Valid Anagram, Missing Number, Top K Frequent Elements |
-| Math and String | ✅ | Palindrome Number, Roman to Integer, Longest Common Prefix, Valid Palindrome |
-| Bit Manipulation | 🔁 | Needs redo — solved problems but concepts not solid |
+| Arrays and Hashing | ⬜ |  |
+| Math and String | ⬜ |  |
+| Bit Manipulation | ⬜ |  |
 | Two Pointers | ⬜ | |
-| Sliding Window | 🔁 | Needs redo — solved problems but concepts not solid |
+| Sliding Window | ⬜ |  |
 | Stack | ⬜ | |
 | Binary Search | ⬜ | |
 
@@ -59,7 +59,7 @@ The hardest conceptual leap. Study the Concepts folder before starting.
 
 | Topic | Status | Notes |
 |-------|--------|-------|
-| Greedy | ✅ | Max Unique Subarray, Max Score Removing Substrings, Rearranging Fruits |
+| Greedy | ⬜ |  |
 | Dynamic Programming — 1D | ⬜ | Read: [Concepts/dynamic-programming.md](../Concepts/dynamic-programming.md) |
 | Dynamic Programming — 2D | ⬜ | |
 | Intervals | ⬜ | |
@@ -72,7 +72,7 @@ Return here after Phase 4 is solid.
 
 | Topic | Status | Notes |
 |-------|--------|-------|
-| Advanced (Segment Tree / Sorted Container) | 🔁 | Needs redo — solved problems but concepts not solid |
+| Advanced (Segment Tree / Sorted Container) | ⬜ |  |
 | Math and Geometry | ⬜ | |
 
 ---
@@ -83,12 +83,12 @@ Problems from the planned list. Tick them off as you solve them.
 
 ### Arrays and Hashing
 
-- [x] Contains Duplicate
-- [x] Missing Number
-- [x] Valid Anagram
+- [ ] Contains Duplicate
+- [ ] Missing Number
+- [ ] Valid Anagram
 - [ ] Majority Element
 - [ ] Two Sum
-- [x] Top K Frequent Elements
+- [ ] Top K Frequent Elements
 - [ ] Group Anagrams
 - [ ] Product of Array Except Self
 - [ ] Valid Sudoku
@@ -99,7 +99,7 @@ Problems from the planned list. Tick them off as you solve them.
 
 ### Two Pointers
 
-- [x] Valid Palindrome
+- [ ] Valid Palindrome
 - [ ] Move Zeroes
 - [ ] Two Sum II - Input Array Is Sorted
 - [ ] 3Sum
@@ -109,8 +109,8 @@ Problems from the planned list. Tick them off as you solve them.
 
 ### Sliding Window
 
-- [x] Fruits Into Baskets
-- [x] Maximum Erasure Value
+- [ ] Fruits Into Baskets
+- [ ] Maximum Erasure Value
 - [ ] Best Time to Buy and Sell Stock
 - [ ] Maximum Number of Vowels in a Substring of Given Length
 - [ ] Minimum Size Subarray Sum
@@ -122,7 +122,7 @@ Problems from the planned list. Tick them off as you solve them.
 
 ### Stack
 
-- [x] Valid Parentheses
+- [ ] Valid Parentheses
 - [ ] Decode String
 - [ ] Asteroid Collision
 - [ ] Min Stack
@@ -239,9 +239,9 @@ Problems from the planned list. Tick them off as you solve them.
 
 ### Greedy
 
-- [x] Maximum Unique Subarray Sum After Deletion
-- [x] Maximum Score From Removing Substrings
-- [x] Rearranging Fruits
+- [ ] Maximum Unique Subarray Sum After Deletion
+- [ ] Maximum Score From Removing Substrings
+- [ ] Rearranging Fruits
 - [ ] Maximum Subarray
 - [ ] Jump Game
 - [ ] Jump Game II
@@ -272,7 +272,7 @@ Problems from the planned list. Tick them off as you solve them.
 
 - [ ] Unique Paths
 - [ ] Longest Common Subsequence
-- [x] Best Time to Buy and Sell Stock II
+- [ ] Best Time to Buy and Sell Stock II
 - [ ] Best Time to Buy and Sell Stock with Cooldown
 - [ ] Coin Change II
 - [ ] Target Sum
@@ -293,11 +293,11 @@ Problems from the planned list. Tick them off as you solve them.
 
 ### Bit Manipulation
 
-- [x] Power of Two
-- [x] Bitwise ORs of Subarrays
-- [x] Count Number of Maximum Bitwise-OR Subsets
-- [x] Smallest Subarrays With Maximum Bitwise OR
-- [x] Longest Subarray With Maximum Bitwise AND
+- [ ] Power of Two
+- [ ] Bitwise ORs of Subarrays
+- [ ] Count Number of Maximum Bitwise-OR Subsets
+- [ ] Smallest Subarrays With Maximum Bitwise OR
+- [ ] Longest Subarray With Maximum Bitwise AND
 - [ ] Single Number
 - [ ] Number of 1 Bits
 - [ ] Counting Bits
@@ -309,9 +309,9 @@ Problems from the planned list. Tick them off as you solve them.
 
 ### Math and Geometry
 
-- [x] Palindrome Number
-- [x] Roman to Integer
-- [x] Longest Common Prefix
+- [ ] Palindrome Number
+- [ ] Roman to Integer
+- [ ] Longest Common Prefix
 - [ ] Happy Number
 - [ ] Plus One
 - [ ] Excel Sheet Column Number

@@ -1,5 +1,2 @@
-word = input()
-n = int(input())
-
-for _ in range(n):
-    print("Hipp hipp hurra, {}!".format(word))
+# Hipp Hipp Húrra
+# TODO: Solve this problem yourself.

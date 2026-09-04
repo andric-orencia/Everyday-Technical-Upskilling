@@ -1,3 +1,2 @@
-arnar = int(input())
-hannes = int(input())
-print(arnar + hannes)
+# Leggja saman
+# TODO: Solve this problem yourself.

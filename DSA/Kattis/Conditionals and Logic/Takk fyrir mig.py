@@ -1,4 +1,2 @@
-n = int(input())
-
-for _ in range(n):
-    print("Takk", input())
+# Takk fyrir mig
+# TODO: Solve this problem yourself.

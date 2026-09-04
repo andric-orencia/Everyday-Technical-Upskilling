@@ -1,2 +1,2 @@
-a, b = map(int, input().split())
-print(a + b)
+# Two-sum
+# TODO: Solve this problem yourself.

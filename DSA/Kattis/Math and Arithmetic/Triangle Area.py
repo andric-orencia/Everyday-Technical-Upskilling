@@ -1,2 +1,2 @@
-b, h = map(int, input().split())
-print(b*h/2)
+# Triangle Area
+# TODO: Solve this problem yourself.

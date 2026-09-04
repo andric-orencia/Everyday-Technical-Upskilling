@@ -1,3 +1,2 @@
-n = int(input())
-arr = list(map(int, input().split()))
-print(sum(arr))
+# N-sum
+# TODO: Solve this problem yourself.

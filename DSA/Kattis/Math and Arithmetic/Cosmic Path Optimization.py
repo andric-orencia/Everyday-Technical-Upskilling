@@ -1,4 +1,2 @@
-n = int(input())
-temps = list(map(int, input().split()))
-
-print(int(sum(temps) / len(temps)))
+# Cosmic Path Optimization
+# TODO: Solve this problem yourself.

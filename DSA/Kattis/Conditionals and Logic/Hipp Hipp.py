@@ -1,2 +1,2 @@
-for _ in range(20):
-    print("Hipp hipp hurra!")
+# Hipp Hipp
+# TODO: Solve this problem yourself.

@@ -1,1 +1,2 @@
-print("VELKOMIN!")
+# Velkomin!
+# TODO: Solve this problem yourself.

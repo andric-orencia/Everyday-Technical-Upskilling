@@ -1,2 +1,2 @@
-a, b, c = map(int, input().split())
-print("correct!" if a + b == c else "wrong!")
+# Adding Trouble
+# TODO: Solve this problem yourself.

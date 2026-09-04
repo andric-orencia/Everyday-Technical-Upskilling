@@ -1,3 +1,2 @@
-x, y = map(int, input().split())
-
-print(x * (y - 1) + 1)
+# Faktor
+# TODO: Solve this problem yourself.

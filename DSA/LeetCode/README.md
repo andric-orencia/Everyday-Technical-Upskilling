@@ -1,6 +1,6 @@
-# LeetCode Solutions
+# LeetCode Practice
 
-29 problems solved, organized by topic. Each file has inline comments explaining the approach and any tricky edge cases.
+A curated set of practice problems, organized by topic. Solve each one yourself in the matching file under its topic folder.
 
 ---
 

@@ -1,1 +1,2 @@
-print("first" if int(input()) % 2 == 1 else "second")
+# Knight Packing
+# TODO: Solve this problem yourself.

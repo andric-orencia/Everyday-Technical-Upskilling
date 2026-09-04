@@ -1,19 +1,6 @@
 # System Design Interview Plan
 
 Target: interview-ready by **October 1, 2026**  
-Background: SRE @ P&G (3,000+ servers, Prometheus/Grafana/Splunk, Puppet, Kubernetes), Samsung (cloud orchestration UI, telecom CNF/VNF topology)
-
----
-
-## Your Edge
-
-Most candidates learn system design from theory. You've **operated** production systems at scale:
-- Engineered monitoring across 3,000+ servers → you know what breaks at scale
-- Owned change deployments across 100+ global sites → you know rollout strategies
-- Built SLO/error budget discipline → you can reason about reliability quantitatively
-- Kubernetes + Jenkins CI/CD at Samsung → you understand container orchestration
-
-Frame your answers from the operator's perspective. That's differentiating.
 
 ---
 
@@ -98,7 +85,7 @@ How systems stay fast and available as load grows.
 
 ## Phase 4 — Reliability & Ops
 
-Your SRE background makes this your strongest phase — articulate it clearly.
+Reliability and operations — how systems stay up and recover when things break.
 
 | Session | Topic | Key Concepts |
 |---------|-------|-------------|
@@ -143,7 +130,7 @@ Full end-to-end mock design sessions. Each one: requirements → estimation → 
 | 6.5 | Design YouTube | Video encoding pipeline, CDN strategy, view count at scale |
 | 6.6 | Design an AI Inference Service | Model serving, autoscaling, latency SLOs, cost-per-token |
 
-Case Study 6.6 is specifically designed for your AI engineering angle — ties both tracks together.
+Case Study 6.6 ties the System Design and AI Engineering tracks together.
 
 ---
 

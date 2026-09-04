@@ -1,2 +1,2 @@
-x, y, z = map(int, input().split())
-print(x * y * z)
+# Jack-O'-Lantern Juxtaposition
+# TODO: Solve this problem yourself.
