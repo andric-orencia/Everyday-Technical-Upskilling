@@ -11,7 +11,7 @@ Python is the language of AI/ML. Real fluency — not just "I can read it" — m
 Tick these off as you can use them *without looking them up*.
 
 ### Core language
-- [ ] Variables, types (`int`, `float`, `str`, `bool`, `None`)
+- [✓] Variables, types (`int`, `float`, `str`, `bool`, `None`)
 - [ ] String operations & f-strings
 - [ ] `if / elif / else`, boolean logic, truthiness
 - [ ] `for` / `while` loops, `range`, `enumerate`, `zip`
