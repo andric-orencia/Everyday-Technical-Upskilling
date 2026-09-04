@@ -10,5 +10,8 @@ Full mock design sessions, one file per case. Each covers: requirements, estimat
 | 6.4 | Web Crawler | ⬜ |
 | 6.5 | Design YouTube | ⬜ |
 | 6.6 | Design an AI Inference Service | ⬜ |
+| 7.CS1 | Design a RAG system for company docs | ⬜ |
+| 7.CS2 | Design a recommendation system | ⬜ |
+| 7.CS3 | Design an LLM-powered automation platform | ⬜ |
 
 Files created after each mock session.

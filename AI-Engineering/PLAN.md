@@ -1,26 +1,50 @@
 # AI Engineering Interview Plan
 
-Target: interview-ready by **October 1, 2026**  
+Part of the [12-week roadmap](../ROADMAP.md). This is the **core track** for the target role: **applied AI/ML engineer**.
 
 ---
 
 ## Objective
 
-Close the gap between practical AI agent experience and the conceptual depth expected at AI engineering roles (AI labs, AI-native product companies, applied science teams). Every session: concept → interviewer probes → your answer → critique. Some sessions include a coding exercise.
+Turn hands-on AI experience (you already build automations with LLMs) into the conceptual depth and vocabulary expected in **applied AI/ML engineering** interviews. Every session: concept → interviewer probes → your answer → critique. Some sessions include a coding exercise.
+
+**Role focus:** This plan is tuned for *applied* AI/ML engineering (LLM products, RAG, agents, automation), **not** AI-research/labs roles. Phases are tagged:
+
+- 🟢 **Core** — do these; they're the heart of the role and get asked constantly.
+- 🔵 **Depth** — understand enough to discuss confidently; go deep only if a target role demands it.
+
+**No CS background?** Start with **Phase 0** and keep the [`Foundations/`](../Foundations/) track running in parallel. The goal is genuine understanding, so you can explain what you build — not memorized answers.
 
 ---
 
 ## Phase Map
 
 ```
-Phase 1 — LLM Internals           (Week 1–2)
-Phase 2 — Retrieval & RAG         (Week 2–3)
-Phase 3 — Agents & Tool Use       (Week 3–4)
-Phase 4 — Evaluation & Evals      (Week 4–5)
-Phase 5 — Fine-tuning & PEFT      (Week 5–6)
-Phase 6 — Inference & Serving     (Week 6–7)
-Phase 7 — Safety & Alignment      (Week 7)
+Phase 0 — Applied Foundations     🟢 Core    (Week 3–4)   How to actually use LLMs
+Phase 1 — LLM Internals           🔵 Depth   (Week 5)     Enough to explain, not research-deep
+Phase 2 — Retrieval & RAG         🟢 Core    (Week 5–6)   The most-asked applied skill
+Phase 3 — Agents & Tool Use       🟢 Core    (Week 7)     Closest to your automation work
+Phase 4 — Evaluation & Evals      🟢 Core    (Week 8)     How you prove a system works
+Phase 5 — Fine-tuning & PEFT      🔵 Depth   (Week 10)    Mostly: when NOT to fine-tune
+Phase 6 — Inference & Serving     🟢 Core    (Week 9)     Latency, cost, deployment
+Phase 7 — Safety & Alignment      🔵 Depth   (Week 12)    Talk to it without jargon
 ```
+
+---
+
+## Phase 0 — Applied Foundations 🟢
+
+**Goal:** Comfortably use LLMs from code and get good output. This is where you start — it builds directly on what you already do at work.
+
+| Session | Topic | Key Concepts |
+|---------|-------|-------------|
+| 0.1 | What an LLM is (mental model) | Next-token prediction, context window, tokens, temperature — the intuition, no math yet |
+| 0.2 | Calling an LLM API | Provider APIs, messages/roles, system vs. user prompts, streaming, cost & tokens |
+| 0.3 | Prompt engineering | Zero/few-shot, chain-of-thought, role prompting, decomposition, common failure patterns |
+| 0.4 | Structured outputs | JSON mode, schemas, parsing/validating model output, when the model "lies" |
+| 0.5 | Embeddings intuition | What an embedding is, cosine similarity, semantic search — the bridge to RAG |
+
+**Coding exercise:** Take one automation you already built with Copilot and rewrite the LLM call yourself from scratch (raw API, your own prompt, parse the JSON output). Understand every line.
 
 ---
 
@@ -151,18 +175,19 @@ Phase 7 — Safety & Alignment      (Week 7)
 4. I critique: what landed, what was vague, what was wrong, what to sharpen.
 5. Coding exercise (where applicable) — you implement, I review.
 
-Start a session: **`AI: Phase X.Y`** (e.g., `AI: Phase 1.1`)
+Start a session: **`AI: Phase X.Y`** (e.g., `AI: Phase 0.1`)
 
 ---
 
 ## Progress Tracker
 
-| Phase | Sessions | Status |
-|-------|----------|--------|
-| 1 — LLM Internals | 1.1 · 1.2 · 1.3 · 1.4 · 1.5 · 1.6 | ⬜ Not started |
-| 2 — Retrieval & RAG | 2.1 · 2.2 · 2.3 · 2.4 · 2.5 · 2.6 · 2.7 | ⬜ Not started |
-| 3 — Agents & Tool Use | 3.1 · 3.2 · 3.3 · 3.4 · 3.5 · 3.6 · 3.7 | ⬜ Not started |
-| 4 — Evaluation & Evals | 4.1 · 4.2 · 4.3 · 4.4 · 4.5 · 4.6 | ⬜ Not started |
-| 5 — Fine-tuning & PEFT | 5.1 · 5.2 · 5.3 · 5.4 · 5.5 · 5.6 · 5.7 | ⬜ Not started |
-| 6 — Inference & Serving | 6.1 · 6.2 · 6.3 · 6.4 · 6.5 · 6.6 · 6.7 | ⬜ Not started |
-| 7 — Safety & Alignment | 7.1 · 7.2 · 7.3 · 7.4 · 7.5 · 7.6 | ⬜ Not started |
+| Phase | Priority | Sessions | Status |
+|-------|----------|----------|--------|
+| 0 — Applied Foundations | 🟢 Core | 0.1 · 0.2 · 0.3 · 0.4 · 0.5 | ⬜ Not started |
+| 1 — LLM Internals | 🔵 Depth | 1.1 · 1.2 · 1.3 · 1.4 · 1.5 · 1.6 | ⬜ Not started |
+| 2 — Retrieval & RAG | 🟢 Core | 2.1 · 2.2 · 2.3 · 2.4 · 2.5 · 2.6 · 2.7 | ⬜ Not started |
+| 3 — Agents & Tool Use | 🟢 Core | 3.1 · 3.2 · 3.3 · 3.4 · 3.5 · 3.6 · 3.7 | ⬜ Not started |
+| 4 — Evaluation & Evals | 🟢 Core | 4.1 · 4.2 · 4.3 · 4.4 · 4.5 · 4.6 | ⬜ Not started |
+| 5 — Fine-tuning & PEFT | 🔵 Depth | 5.1 · 5.2 · 5.3 · 5.4 · 5.5 · 5.6 · 5.7 | ⬜ Not started |
+| 6 — Inference & Serving | 🟢 Core | 6.1 · 6.2 · 6.3 · 6.4 · 6.5 · 6.6 · 6.7 | ⬜ Not started |
+| 7 — Safety & Alignment | 🔵 Depth | 7.1 · 7.2 · 7.3 · 7.4 · 7.5 · 7.6 | ⬜ Not started |

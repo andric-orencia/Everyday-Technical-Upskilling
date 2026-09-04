@@ -2,40 +2,37 @@
 
 # Everyday Technical Upskilling
 
-Python DSA practice · System design · AI engineering — my personal interview-prep workspace.
+My structured path from **manufacturing engineer → AI/ML engineer**. Foundations, applied AI, system design, projects, and interview prep — built to actually understand the concepts, not just memorize answers.
 
 [![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
-[![LeetCode](https://img.shields.io/badge/LeetCode-0%20Solved-FFA116?style=flat-square&logo=leetcode&logoColor=black)](https://leetcode.com/)
-[![Kattis](https://img.shields.io/badge/Kattis-0%20Solved-1F8ACB?style=flat-square)](https://open.kattis.com/)
+[![Roadmap](https://img.shields.io/badge/Plan-12--week%20roadmap-8A2BE2?style=flat-square)](./ROADMAP.md)
+[![Target](https://img.shields.io/badge/Target-AI%2FML%20Engineer-FF6F00?style=flat-square)](./AI-Engineering/)
 [![Last Commit](https://img.shields.io/github/last-commit/andric-orencia/Everyday-Technical-Upskilling?style=flat-square&color=brightgreen)](https://github.com/andric-orencia/Everyday-Technical-Upskilling/commits/master)
 
 </div>
 
 ---
 
-> **Starting from scratch.** The folders below are set up as a roadmap — every problem file is an empty stub, so I write each solution myself.
+> **Where I'm starting:** I already build AI automations at work (LLM-generated scripts for ops tasks like remediating stopped services). What I'm adding here is the **foundation** — the CS, math, and AI-engineering depth to explain what I build, pass interviews, and grow into an AI/ML engineer. No CS degree; building it deliberately.
+
+## 🚀 Start here → [`ROADMAP.md`](./ROADMAP.md)
+
+A single **12-week plan** that sequences every track below — foundations first, then applied AI, then interview polish. It's the master schedule; each track's plan is the detail.
+
+---
 
 ## Tracks
 
-Three parallel tracks.
+Six tracks, one roadmap.
 
-### DSA — Algorithms & Data Structures
-
-Daily LeetCode and Kattis practice in Python, organized by topic following the NeetCode150 progression.
-
-→ [`DSA/`](./DSA/) · Progress: [`DSA/LeetCode/PROGRESS.md`](./DSA/LeetCode/PROGRESS.md) · Log: [`DSA/COACHING.md`](./DSA/COACHING.md)
-
-### System Design
-
-Six-phase program: foundations → storage → scalability → reliability/ops → cloud service mapping → mock case studies.
-
-→ [`System-Design/`](./System-Design/) · Plan: [`System-Design/PLAN.md`](./System-Design/PLAN.md) · Log: [`System-Design/COACHING.md`](./System-Design/COACHING.md)
-
-### AI Engineering
-
-Seven-phase program: LLM internals → RAG → agents → evals → fine-tuning → inference → safety. Each phase ends with a from-scratch coding exercise.
-
-→ [`AI-Engineering/`](./AI-Engineering/) · Plan: [`AI-Engineering/PLAN.md`](./AI-Engineering/PLAN.md) · Log: [`AI-Engineering/COACHING.md`](./AI-Engineering/COACHING.md)
+| Track | Folder | What it covers |
+|-------|--------|----------------|
+| 🧱 **Foundations** | [`Foundations/`](./Foundations/) | The CS + Python + math a CS degree would've given me |
+| 🤖 **AI Engineering** | [`AI-Engineering/`](./AI-Engineering/) | **Core of the target role** — LLMs, RAG, agents, evals, serving |
+| 🧩 **DSA** | [`DSA/`](./DSA/) | Coding-interview problem solving in Python |
+| 🏗️ **System Design** | [`System-Design/`](./System-Design/) | Architecture + **ML/AI system design** rounds |
+| 📦 **Projects** | [`Projects/`](./Projects/) | Portfolio pieces that prove I can build |
+| 💼 **Career** | [`Career/`](./Career/) | Resume, portfolio, behavioral stories for a career-changer |
 
 ---
 
@@ -43,45 +40,66 @@ Seven-phase program: LLM internals → RAG → agents → evals → fine-tuning 
 
 ```
 Everyday-Technical-Upskilling/
-├── DSA/
-│   ├── COACHING.md              session log
-│   ├── LeetCode/
-│   │   ├── PROGRESS.md          phased checklist with per-problem tick boxes
-│   │   └── <Topic>/             problems grouped by topic
-│   ├── Kattis/
-│   │   └── <Type>/              problems grouped by problem type
-│   └── Concepts/                paradigm notes with worked examples
+├── ROADMAP.md                   ← master 12-week plan (start here)
 │
-├── System-Design/
-│   ├── PLAN.md                  six-phase curriculum with session map
+├── Foundations/                 no-CS-degree gap-fillers
+│   ├── Python/                  language fluency for AI/ML
+│   ├── Computer-Science/        OS, networking, databases, Git, Big-O
+│   └── Math-for-ML/             linear algebra, probability, calculus (light)
+│
+├── AI-Engineering/              ← core track for the role
+│   ├── PLAN.md                  8-phase curriculum (applied-first, Core/Depth tagged)
 │   ├── COACHING.md              session log
 │   ├── Concepts/                one .md per topic
-│   └── Case-Studies/            mock design write-ups
+│   └── Exercises/               from-scratch implementations
 │
-└── AI-Engineering/
-    ├── PLAN.md                  seven-phase curriculum with session map
-    ├── COACHING.md              session log
-    ├── Concepts/                one .md per topic
-    └── Exercises/               from-scratch implementations per phase
+├── DSA/
+│   ├── LeetCode/ Kattis/ Concepts/   problems by topic + paradigm notes
+│   └── PROGRESS.md              phased checklist
+│
+├── System-Design/
+│   ├── PLAN.md                  7 phases incl. ML/AI system design
+│   ├── Concepts/ Case-Studies/
+│
+├── Projects/                    portfolio strategy + project template
+│
+└── Career/
+    ├── Resume/ Portfolio/ Behavioral/
 ```
 
 ---
 
-## Progress
+## Progress dashboard
+
+Update this every week (see the review ritual in [`ROADMAP.md`](./ROADMAP.md)).
 
 | Track | Status |
 |-------|--------|
-| DSA | ⬜ Not started |
-| System Design | ⬜ Not started |
-| AI Engineering | ⬜ Not started |
+| 🧱 Foundations | ⬜ Not started |
+| 🤖 AI Engineering | ⬜ Not started |
+| 🧩 DSA | ⬜ Not started |
+| 🏗️ System Design | ⬜ Not started |
+| 📦 Projects | ⬜ 0 shipped |
+| 💼 Career | ⬜ Not started |
 
-Detailed plans:
+Detailed trackers:
+- Roadmap: [`ROADMAP.md`](./ROADMAP.md)
+- AI Engineering: [`AI-Engineering/PLAN.md`](./AI-Engineering/PLAN.md)
 - DSA: [`DSA/LeetCode/PROGRESS.md`](./DSA/LeetCode/PROGRESS.md)
 - System Design: [`System-Design/PLAN.md`](./System-Design/PLAN.md)
-- AI Engineering: [`AI-Engineering/PLAN.md`](./AI-Engineering/PLAN.md)
+
+---
+
+## How I work
+
+1. Follow the [roadmap](./ROADMAP.md) week by week — foundations interleaved with hands-on AI.
+2. Understand *why* before memorizing — write concepts back in my own words.
+3. Log every session in the relevant `COACHING.md`; tick trackers.
+4. Turn work automations into portfolio projects; turn projects into behavioral stories.
+5. Consistency over intensity. Progress compounds.
 
 ---
 
 ## Attribution
 
-The scaffold — folder structure, problem index, and study plans — was originally forked from [espiritu-p/Interview-Prep](https://github.com/espiritu-p/Interview-Prep). All solutions in this repo are my own work.
+The original DSA/System-Design/AI-Engineering scaffold was forked from [espiritu-p/Interview-Prep](https://github.com/espiritu-p/Interview-Prep). The Foundations, Projects, and Career tracks and the unified roadmap were added for my career-transition path. All solutions and write-ups are my own work.

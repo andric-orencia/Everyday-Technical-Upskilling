@@ -1,6 +1,6 @@
 # System Design Interview Plan
 
-Target: interview-ready by **October 1, 2026**  
+Part of the [12-week roadmap](../ROADMAP.md), which governs scheduling (the week labels below are the original standalone pacing). For the **AI/ML engineer** target, **Phase 7 (ML/AI System Design)** is the round you'll most likely face — don't skip it.
 
 ---
 
@@ -27,6 +27,7 @@ Phase 3 — Scalability Patterns (Week 2–3)   Load balancing, sharding, CDN, q
 Phase 4 — Reliability & Ops    (Week 3)     SLOs, circuit breakers, observability
 Phase 5 — Cloud (AWS/Azure)    (Week 3–4)   Managed services mapped to design patterns
 Phase 6 — Case Studies         (Week 4)     6 full mock designs end-to-end
+Phase 7 — ML/AI System Design  (Week 4+)    The design round for AI/ML eng roles
 ```
 
 ---
@@ -134,6 +135,32 @@ Case Study 6.6 ties the System Design and AI Engineering tracks together.
 
 ---
 
+## Phase 7 — ML/AI System Design
+
+The specialized design round for AI/ML engineering roles. Same structure as general system design (requirements → estimation → architecture → deep-dive → tradeoffs) but centered on data, models, and inference. This is where your AI-Engineering track and System-Design track meet.
+
+| Session | Topic | Key Concepts |
+|---------|-------|-------------|
+| 7.1 | ML system anatomy | Data → features → training → serving → monitoring; offline vs. online |
+| 7.2 | Data & feature pipelines | ETL/ELT, feature stores, batch vs. streaming features, data quality |
+| 7.3 | Training vs. inference | Batch training, model registry/versioning, online vs. batch inference |
+| 7.4 | Model serving | REST/gRPC endpoints, autoscaling, GPU vs. CPU, latency SLOs, cost-per-request |
+| 7.5 | LLM/RAG systems at scale | Vector DB choice, chunking pipeline, caching, cost control, guardrails |
+| 7.6 | Monitoring & feedback | Data/model drift, online metrics, A/B tests, human feedback loops, retraining triggers |
+
+**Mock designs (ML-flavored case studies):**
+
+| # | Problem | Core Challenges |
+|---|---------|----------------|
+| 7.CS1 | Design a RAG system for company docs | Ingestion pipeline, vector store, retrieval quality, freshness, cost |
+| 7.CS2 | Design a recommendation system | Candidate generation + ranking, feature store, cold start, online serving |
+| 7.CS3 | Design an LLM-powered automation platform | Tool/agent orchestration, reliability, observability, guardrails (mirrors your work) |
+
+**AWS map:** SageMaker, Bedrock, Kinesis, Feature Store, ECR  
+**Azure map:** Azure ML, Azure OpenAI, Event Hub, Feature Store
+
+---
+
 ## Progress Tracker
 
 | Phase | Sessions | Status |
@@ -144,6 +171,7 @@ Case Study 6.6 ties the System Design and AI Engineering tracks together.
 | 4 — Reliability & Ops | 4.1 · 4.2 · 4.3 · 4.4 · 4.5 · 4.6 | ⬜ Not started |
 | 5 — Cloud (AWS/Azure) | 5.1 · 5.2 · 5.3 · 5.4 · 5.5 · 5.6 · 5.7 | ⬜ Not started |
 | 6 — Case Studies | 6.1 · 6.2 · 6.3 · 6.4 · 6.5 · 6.6 | ⬜ Not started |
+| 7 — ML/AI System Design | 7.1 · 7.2 · 7.3 · 7.4 · 7.5 · 7.6 · CS1 · CS2 · CS3 | ⬜ Not started |
 
 ---
 
