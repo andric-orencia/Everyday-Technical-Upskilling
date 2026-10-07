@@ -13,6 +13,7 @@ Technical skill gets you the interview; this track helps you *land* it. Everythi
 | **Resume** | [`Resume/`](./Resume/) | A resume that translates manufacturing + self-taught AI into AI/ML-engineer language |
 | **Portfolio** | [`Portfolio/`](./Portfolio/) | GitHub profile, portfolio presentation, online presence |
 | **Behavioral** | [`Behavioral/`](./Behavioral/) | STAR stories for the "tell me about a time…" round |
+| **Product-Owner-AI** | [`Product-Owner-AI/`](./Product-Owner-AI/) | Side-track plan for AI Product Owner / Head of Product roles — a parallel option being explored alongside the main AI/ML engineer path |
 
 ---
 
