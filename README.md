@@ -77,16 +77,18 @@ Update this every week (see the review ritual in [`ROADMAP.md`](./ROADMAP.md)).
 |-------|--------|
 | 🧱 Foundations | ⬜ Not started |
 | 🤖 AI Engineering | ⬜ Not started |
-| 🧩 DSA | ⬜ Not started |
+| 🧩 DSA | ⬜ Not started (full problem checklist scaffolded in `PROGRESS.md`) |
 | 🏗️ System Design | ⬜ Not started |
 | 📦 Projects | ⬜ 0 shipped |
-| 💼 Career | ⬜ Not started |
+| 💼 Career | ⬜ Not started (Resume/Portfolio/Behavioral still empty templates) |
+| 💼 ↳ Product-Owner-AI *(side-track)* | 🟨 Scaffolded — plan + 4 hands-on exercises ready, not yet worked through |
 
 Detailed trackers:
 - Roadmap: [`ROADMAP.md`](./ROADMAP.md)
 - AI Engineering: [`AI-Engineering/PLAN.md`](./AI-Engineering/PLAN.md)
 - DSA: [`DSA/LeetCode/PROGRESS.md`](./DSA/LeetCode/PROGRESS.md)
 - System Design: [`System-Design/PLAN.md`](./System-Design/PLAN.md)
+- Product-Owner-AI: [`Career/Product-Owner-AI/PROGRESS.md`](./Career/Product-Owner-AI/PROGRESS.md)
 
 ---
 
