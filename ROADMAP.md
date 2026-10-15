@@ -1,139 +1,150 @@
-# 12-Week Roadmap → AI/ML Engineer
+# 12-Week Roadmap → AI Automations Engineer (agent-first)
 
-A single, sequenced plan that ties every track in this repo together. Built for a **career-changer** (manufacturing engineer → AI/ML engineer) with **no formal CS background** who wants to genuinely understand the foundations — not just memorize answers.
+A single, sequenced plan that ties every track in this repo together. Built for a **Site Reliability Engineer in manufacturing IT** (mechatronics/manufacturing background, no formal CS degree) moving into **AI automation / applied AI engineering** roles.
 
-> **The core idea:** foundations first, then applied AI, then interview polish. You already build AI automations day to day. This roadmap gives you the *vocabulary and mental models* to explain what you build, pass interviews, and level up.
+> **Why agent-first (restructured 2026-10):** An outside-interviewer review of my resume found that my strongest work is a **rule-based** self-healing automation. It takes ServiceNow + Teams stopped-service alerts, restarts services in dependency order, and closes the tickets. It handled 696 alerts and auto-resolved 101 incidents, cutting resolution from 5 min to 10 s. That work is real but it isn't AI. For AI-automation roles I'll be screened against people who have **built LLM agents, retrieval, and evals**. So the plan now builds an agent **first**, on top of automation I already understand. Foundations and DSA continue in the background instead of blocking the AI work.
+
+---
+
+## The priority stack
+
+| Priority | What | Why |
+|----------|------|-----|
+| 🥇 1 | **Ship an AI agent** (Weeks 1–4): an AI incident-triage agent | This closes the #1 resume gap. It's low-risk because it only *suggests* and never acts. |
+| 🥈 2 | **Ship a guarded action agent** (Weeks 5–8): an AI layer on my self-healing automation | It shows tool-use, human-in-the-loop, and MCP: the skills AI-automation roles test. |
+| 🥉 3 | **Interview depth** (Weeks 9–12): system design, LLM internals, mocks | This lets me *explain* what I built at interview depth. |
+| ♻️ Always | **DSA maintenance + just-in-time foundations** | Keeps coding rounds warm without stealing the critical path. |
 
 ---
 
 ## How this maps to the folders
 
-| Track | Folder | What it's for |
-|-------|--------|---------------|
-| Foundations | [`Foundations/`](./Foundations/) | The CS + Python + math you missed without a CS degree |
-| DSA | [`DSA/`](./DSA/) | Coding-interview problem solving |
-| AI Engineering | [`AI-Engineering/`](./AI-Engineering/) | The core of your target role: LLMs, RAG, agents, evals |
-| System Design | [`System-Design/`](./System-Design/) | Architecture + ML system design rounds |
-| Projects | [`Projects/`](./Projects/) | Portfolio pieces that prove you can build |
-| Career | [`Career/`](./Career/) | Resume, portfolio, behavioral stories |
+| Track | Folder | Role in the agent-first plan |
+|-------|--------|------------------------------|
+| AI Engineering | [`AI-Engineering/`](./AI-Engineering/) | **Critical path.** Phases are reordered around building agents. |
+| Projects | [`Projects/`](./Projects/) | **Critical path.** Project 1 = triage agent, Project 2 = guarded remediation agent. |
+| Career | [`Career/`](./Career/) | Turn each shipped agent into a resume bullet + STAR story. |
+| Foundations | [`Foundations/`](./Foundations/) | Just-in-time: learn the Python/CS/math a given week's build needs. |
+| DSA | [`DSA/`](./DSA/) | Maintenance mode: ~3 problems/week. |
+| System Design | [`System-Design/`](./System-Design/) | Starts Week 7, once I have a real system to reason about. |
 
 ---
 
 ## Time budget
 
-This plan assumes **~10–15 hours/week** (you're working full-time). If you have more, pull work forward. If less, extend the calendar — **consistency beats intensity**.
-
-A sustainable weekly rhythm:
+This assumes **~10–15 hours/week** alongside full-time work.
 
 | Day type | Focus | ~Time |
 |----------|-------|-------|
-| Weekdays (pick 4) | 1 DSA problem + 1 foundation/AI concept | 45–75 min |
-| One weekday | AI Engineering hands-on session | 90 min |
-| One weekend block | Project work + weekly review | 2–3 hrs |
+| Weekdays (pick 3) | 1 AI concept session + build on the week's agent milestone | 60–75 min |
+| One weekday | 1–2 DSA problems (maintenance) | 45 min |
+| Weekend block | Agent build + weekly review | 3 hrs |
 
-Log every session in the relevant `COACHING.md`. **Understanding > coverage** — it's fine to go slower and actually get it.
+Rule of thumb: **≥60% of weekly hours go to the agent build.** If time is short, cut DSA and foundations first, never the agent milestone.
+
+---
+
+## Ground rules for building agents (work-safe)
+
+- **Build personally on synthetic data first.** Use fake tickets, fake hostnames, and sanitized runbooks. **Never put P&G data, hostnames, or credentials in this public repo.**
+- **Read-only before write.** Agents *suggest* before they *act*. Every action tool must have an allowlist, a dry-run mode, and human approval.
+- **A work pilot comes only with approval.** Use company-approved models and platforms (e.g., Azure OpenAI or Copilot Studio, per policy) and follow change management.
+- **Only claim what's built.** Resume bullets get updated *after* something ships, with real metrics.
 
 ---
 
 ## The 12 weeks
 
-Milestones are marked 🏁. Each week lists the **primary** focus; secondary items keep other tracks warm.
+Milestones are marked 🏁. Phase references point to [`AI-Engineering/PLAN.md`](./AI-Engineering/PLAN.md).
 
-### Month 1 — Foundations & Applied AI Basics
+### Month 1: Ship Agent #1, the AI incident-triage agent (suggest-only)
 
-**Week 1 — Set up + Python + how computers work**
-- Foundations: [`Python`](./Foundations/Python/) — data types, control flow, functions, comprehensions, idioms.
-- Foundations: [`Computer-Science`](./Foundations/Computer-Science/) — Git/GitHub, the command line, how code runs.
-- DSA: Arrays & Hashing — start with easy problems ([`PROGRESS.md`](./DSA/LeetCode/PROGRESS.md)).
-- Career: create the resume skeleton ([`Career/Resume`](./Career/Resume/)).
+The goal is an agent that reads a new incident ticket, classifies it, looks up similar past incidents and the relevant runbook, and posts a suggested fix with citations. This is "idea #1" from my resume review, and it builds directly on my real work.
 
-**Week 2 — Python for data + Big-O + core CS**
-- Foundations: Python — dicts/sets, OOP basics, error handling, virtual envs, `numpy`/`pandas` first touch.
-- Foundations: CS — Big-O & complexity, memory vs. time.
-- DSA: finish Arrays & Hashing, start Two Pointers.
-- Career: draft 3 behavioral stories in STAR form ([`Career/Behavioral`](./Career/Behavioral/)).
+**Week 1: Talk to an LLM from code + structured output**
+- AI Eng **Phase 0.1–0.4**: the LLM mental model, API calls, prompting, and structured outputs.
+- Build: `triage_classifier.py` reads a synthetic ticket and returns validated JSON (`category`, `severity`, `likely_component`, `confidence`).
+- Foundations (just-in-time): Python functions, dicts, `pydantic`, env vars for API keys.
+- DSA: 2 easy Arrays & Hashing problems.
 
-**Week 3 — CS systems + first LLM API calls**
-- Foundations: CS — OS basics (process/thread/memory), networking (HTTP, DNS, TCP/IP), databases & SQL basics.
-- AI Engineering: **Phase 0.1–0.3** — what an LLM is, calling an API, prompt engineering fundamentals.
-- DSA: Sliding Window + Stack.
+**Week 2: Tool calling + the agent loop, from scratch**
+- AI Eng **Phase 3.1–3.2**: the ReAct loop and function calling (JSON-schema tools, errors, max-steps).
+- Build: `triage_agent.py` is a no-framework agent with **read-only** tools: `get_ticket`, `get_service_status` (mock), and `find_similar_incidents` (keyword search for now).
+- 🏁 **Milestone:** I can explain an agent loop line by line because I wrote it.
 
-**Week 4 — Prompting + embeddings + 🏁 Project 1 kickoff**
-- AI Engineering: **Phase 0.4–0.5** — structured outputs, embeddings & vector search intuition.
-- Foundations: [`Math-for-ML`](./Foundations/Math-for-ML/) — vectors, dot product, what "similarity" means.
-- 🏁 **Project 1:** start a small LLM-powered tool ([`Projects/`](./Projects/)) — formalize one of your automations.
-- 🏁 **Milestone:** you can explain what an LLM is, call one from Python, and read/write clean Python.
+**Week 3: Give the agent knowledge (RAG over runbooks)**
+- AI Eng **Phase 0.5 + 2.1–2.4**: embeddings, chunking, and vector search.
+- Build: a `search_runbooks` tool that chunks + embeds ~20 sanitized runbooks into a local vector store (FAISS/Chroma). The agent cites the runbook it used.
+- Foundations: Math-for-ML, covering vectors and cosine similarity (only as much as embeddings need).
 
-### Month 2 — Core AI Engineering + System Design
+**Week 4: Prove it works (evals + guardrails) → 🏁 ship Project 1**
+- AI Eng **Phase 4.3, 4.4, 4.6 + 3.7 + 7.4**: golden test sets, LLM-as-judge, agent evals, failure modes, and prompt injection.
+- Build: a 30-ticket eval set and a script that reports **classification accuracy, correct-runbook hit rate, and tool-call accuracy**. Add guardrails for max steps, tool allowlist, and "I don't know" when retrieval is weak.
+- 🏁 **Project 1 shipped:** README with architecture diagram + eval results, pushed to GitHub ([`Projects/`](./Projects/)).
+- Career: add the project to the resume + write its STAR story. Draft a one-page **work pilot proposal** for a suggest-only triage assistant in my team's real workflow.
 
-**Week 5 — LLM internals (enough to discuss) + RAG start**
-- AI Engineering: **Phase 1** (LLM internals) — Transformer/attention at *interview depth*, not research depth.
-- AI Engineering: **Phase 2.1–2.2** — RAG fundamentals, chunking.
-- DSA: Binary Search + Linked List.
+### Month 2: Ship Agent #2, the guarded remediation agent
 
-**Week 6 — RAG deep + 🏁 Project 1 ship**
-- AI Engineering: **Phase 2.3–2.7** — embeddings, vector search, reranking, hybrid, failure modes. Do the RAG coding exercise.
-- 🏁 **Project 1 shipped** — write a README, push to GitHub, add to portfolio.
-- DSA: Trees (BFS/DFS).
+The goal is to put an AI decision layer on top of the self-healing automation. The agent picks from **approved** actions only, a human approves anything risky, and every step is logged. This is "idea #3" from the review and the one that most resembles real AI-automation-engineer work.
 
-**Week 7 — Agents + System Design foundations**
-- AI Engineering: **Phase 3** (Agents & tool use) — this is close to the automation work you already do.
-- System Design: **Phase 1** (Foundations) — numbers, client/server, load balancing.
-- DSA: Trees continued + Heap.
+**Week 5: Agent frameworks + human-in-the-loop**
+- AI Eng **Phase 3.5**: LangGraph (state graph, conditional edges, checkpointing, interrupt/resume).
+- Build: port the triage agent to LangGraph, then add action tools (`restart_service` in **dry-run**, `add_ticket_note`) behind an **approval interrupt**.
+- 🏁 **Project 2 kickoff.**
 
-**Week 8 — Evals + storage + 🏁 Project 2 kickoff**
-- AI Engineering: **Phase 4** (Evaluation) — how you *prove* an AI system works.
-- System Design: **Phase 2** (Storage & databases).
-- 🏁 **Project 2:** a RAG or agent app (bigger, portfolio centerpiece).
-- 🏁 **Milestone:** you can design and evaluate a RAG pipeline and explain an agent loop.
+**Week 6: Standard tool interfaces (MCP) + memory**
+- AI Eng **Phase 3.6 + 3.3**: MCP architecture and memory types.
+- Build: expose the ops tools as an **MCP server** so any MCP client (including Copilot) can use them. Add episodic memory ("what happened last time on this host?").
+- AI Eng **Phase 2.5–2.7**: reranking, hybrid search, and RAG failure modes. Improve runbook retrieval and re-run evals.
 
-### Month 3 — Depth, System Design & Interview Polish
+**Week 7: Multi-agent + ship as a service**
+- AI Eng **Phase 3.4**: multi-agent (a triage agent hands off to a remediation agent, with a supervisor).
+- Build: wrap it in **FastAPI + Docker**. Add tracing/observability (every LLM call, tool call, cost, and latency logged). It's an SRE skill applied to AI.
+- System Design **Phase 1** (Foundations).
 
-**Week 9 — Scalability + inference/serving**
-- System Design: **Phase 3** (Scalability) + skim **Phase 5** (Cloud) — you already touch cloud/services at work.
-- AI Engineering: **Phase 6** (Inference & serving) — latency vs. throughput, quantization, vLLM.
-- DSA: Graphs.
+**Week 8: 🏁 ship Project 2 + update the resume with real AI evidence**
+- AI Eng **Phase 4.1–4.2**: why evals are hard and automated metrics. Extend evals to trajectories (did it pick the right action and stop when it should?).
+- 🏁 **Project 2 shipped:** README, demo GIF/video, eval report, and a safety design section.
+- Career: replace "AI-assisted automation" claims with concrete agent bullets + metrics. Update LinkedIn.
+- Optional credential: an Azure AI Engineer certification (AI-102 or its current successor). Check what's current before booking.
+- 🏁 **Milestone:** I can show two working agents, explain their architecture, and show how I measured them.
 
-**Week 10 — ML system design + reliability**
-- System Design: **Phase 7 (ML/AI System Design)** — the round AI/ML eng interviews actually test.
-- System Design: **Phase 4** (Reliability & ops).
-- AI Engineering: **Phase 5** (Fine-tuning & PEFT) — *when* to fine-tune vs. RAG vs. prompt.
+### Month 3: Interview depth + polish
 
-**Week 11 — 🏁 Project 2 ship + mock interviews**
-- 🏁 **Project 2 shipped** — README, demo, portfolio entry.
-- System Design: **Case Studies 6.1 + 6.6** (URL shortener, AI inference service).
-- Career: finalize resume; polish GitHub profile & portfolio ([`Career/Portfolio`](./Career/Portfolio/)).
-- DSA: revisit any 🔁 problems.
+**Week 9: LLM internals + serving (interview depth)**
+- AI Eng **Phase 1** (Transformer/attention/KV cache, at the depth needed to explain it) + **Phase 6** (latency, cost, caching, structured decoding).
+- System Design **Phase 2–3** (storage, scalability).
+- DSA: back up to 3–4 problems/week.
 
-**Week 12 — Interview simulation + apply**
-- Do 2–3 full mock loops: 1 DSA + 1 system/ML design + behavioral.
-- AI Engineering: **Phase 7** (Safety & alignment) — talk to it without jargon.
-- Career: behavioral stories final pass; start applying.
-- 🏁 **Milestone:** interview-ready across coding, ML/AI, system design, and behavioral.
+**Week 10: AI/ML system design**
+- System Design **Phase 7 (ML/AI System Design)**: practice designing "an AI ops assistant for 2,000+ servers" end to end.
+- AI Eng **Phase 5** (fine-tuning), mainly so I can explain *when not to* fine-tune vs. using RAG or prompting.
+- System Design **Phase 4** (reliability & ops). This is my home turf; connect it to AI systems.
 
----
+**Week 11: Mocks + portfolio polish**
+- System Design **Case Study 6.6** (AI inference service) + one agent-system design mock.
+- AI Eng **Phase 7** (safety & governance), applied to agents that act on production systems.
+- Career: final resume pass, GitHub profile README, portfolio.
 
-## Additional topics worth covering (beyond the core tracks)
-
-You asked what else is good to cover. These matter for **applied AI/ML engineer** roles and are woven into the tracks above — pull them in as you go:
-
-- **APIs & services** — building an AI feature as a service with FastAPI (Project work).
-- **Docker & deployment** — packaging and shipping a model/app (Projects + System Design Phase 6).
-- **MLOps / LLMOps basics** — versioning, monitoring, observability, prompt/version management.
-- **Vector databases** — FAISS, pgvector, Pinecone/Weaviate tradeoffs (AI-Eng Phase 2).
-- **Data engineering basics** — pipelines, ETL, feature stores (System Design Phase 7).
-- **Prompt & context engineering** — the highest-leverage practical AI skill (AI-Eng Phase 0 & 3).
-- **Testing** — `pytest`, evaluating non-deterministic AI output (Foundations + AI-Eng Phase 4).
-- **Cloud** — AWS/Azure AI services (System Design Phase 5).
+**Week 12: Interview simulation + apply**
+- 2–3 full mock loops: 1 DSA + 1 AI/agent system design + behavioral (built on the two agent STAR stories + self-healing story).
+- Start applying to AI automation engineer / applied AI engineer / AI-focused SRE roles.
+- 🏁 **Milestone:** interview-ready with two shipped agents as proof.
 
 ---
 
-## Weekly review ritual (do this every weekend)
+## After the 12 weeks (stretch)
 
-1. Update the `COACHING.md` for each track you touched.
-2. Tick boxes in the relevant `PROGRESS.md` / plan tracker.
-3. Move any problem you needed a hint on to 🔁 — redo it next week.
+- Run the **work pilot** (if approved) and replace synthetic metrics with real ones, e.g., "reduced triage time X%".
+- A third agent: AI-drafted root-cause notes from logs + ticket history ("idea #2").
+- Deeper DSA (graphs, DP) if targeting big-tech applied-AI roles.
+
+---
+
+## Weekly review ritual (every weekend)
+
+1. Did the **agent milestone** for this week ship? If not, that's next week's first task. Don't skip ahead.
+2. Update [`AI-Engineering/COACHING.md`](./AI-Engineering/COACHING.md) and any other track touched.
+3. Tick boxes in [`AI-Engineering/PLAN.md`](./AI-Engineering/PLAN.md) / [`DSA/LeetCode/PROGRESS.md`](./DSA/LeetCode/PROGRESS.md).
 4. Update the progress dashboard in the root [`README.md`](./README.md).
-5. Write one sentence: *"This week I can now explain/do ____ that I couldn't before."*
-
-Progress compounds. Trust the process.
+5. Write one sentence: *"This week my agent can now ____ that it couldn't before."*

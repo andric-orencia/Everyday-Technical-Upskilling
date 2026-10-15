@@ -60,6 +60,17 @@ EDUCATION / CERTIFICATIONS
 
 ---
 
+## Closing the "is this actually AI?" gap
+
+An outside-interviewer review (Oct 2026) rated the resume **High** for SRE/automation roles but only **Low–Medium** for AI automation roles. The self-healing automation is rule-based, and nothing yet shows hands-on LLM/agent work. The fix is shipping the agent projects in the [roadmap](../../ROADMAP.md), not rewording.
+
+- **Don't** describe the current self-healing tool as "AI" or "agentic."
+- **After Project 1 ships**, add a Projects line like: *"AI Incident-Triage Agent: LLM agent that classifies tickets and retrieves runbooks via RAG; X% classification accuracy and Y% correct-runbook hit rate on a 30-ticket eval set (Python, tool calling, FAISS)."* Fill in the real numbers.
+- **After Project 2 ships**, add the guarded remediation agent (human-in-the-loop, MCP, evals).
+- **If a work pilot is approved**, that becomes the strongest Experience bullet: real triage-time reduction on production incidents.
+
+---
+
 ## Checklist before you apply
 
 - [ ] One page, clean, consistent formatting

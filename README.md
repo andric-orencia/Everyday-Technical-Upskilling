@@ -13,11 +13,11 @@ My structured path from **manufacturing engineer → AI/ML engineer**. Foundatio
 
 ---
 
-> **Where I'm starting:** I already build AI automations at work (LLM-generated scripts for ops tasks like remediating stopped services). What I'm adding here is the **foundation** — the CS, math, and AI-engineering depth to explain what I build, pass interviews, and grow into an AI/ML engineer. No CS degree; building it deliberately.
+> **Where I'm starting:** I'm a Site Reliability Engineer in manufacturing IT. I've built a **rule-based** self-healing automation (ServiceNow + Teams stopped-service recovery: 101 incidents auto-resolved, 5 min → 10 s), but **no AI agent yet**. That's the #1 gap for AI automation roles, so this repo is now **agent-first**: ship two LLM agents on top of my ops domain within 8 weeks, then build interview depth. No CS degree; filling foundations just-in-time.
 
 ## 🚀 Start here → [`ROADMAP.md`](./ROADMAP.md)
 
-A single **12-week plan** that sequences every track below — foundations first, then applied AI, then interview polish. It's the master schedule; each track's plan is the detail.
+A single **12-week, agent-first plan**. Month 1 ships an AI incident-triage agent. Month 2 ships a guarded remediation agent. Month 3 covers interview depth. It's the master schedule; each track's plan is the detail.
 
 ---
 
