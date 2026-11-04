@@ -6,7 +6,7 @@ Part of the [12-week roadmap](../ROADMAP.md). This is the **core track** for the
 
 ## Objective
 
-Turn hands-on AI experience (you already build automations with LLMs) into the conceptual depth and vocabulary expected in **applied AI/ML engineering** interviews. Every session: concept → interviewer probes → your answer → critique. Some sessions include a coding exercise.
+Close the biggest resume gap first. My current automation (self-healing stopped-service recovery via ServiceNow + Teams) is **rule-based, not AI**. So this track is **agent-first**: build and ship real LLM agents on top of the ops work I already know, then add interview depth. Every session: concept → interviewer probes → your answer → critique → apply it to the week's agent build.
 
 **Role focus:** This plan is tuned for *applied* AI/ML engineering (LLM products, RAG, agents, automation), **not** AI-research/labs roles. Phases are tagged:
 
@@ -19,16 +19,25 @@ Turn hands-on AI experience (you already build automations with LLMs) into the c
 
 ## Phase Map
 
+Phase numbers are kept for reference, but the **order you do them in is agent-driven**. Sessions are pulled in when the agent build needs them:
+
 ```
-Phase 0 — Applied Foundations     🟢 Core    (Week 3–4)   How to actually use LLMs
-Phase 1 — LLM Internals           🔵 Depth   (Week 5)     Enough to explain, not research-deep
-Phase 2 — Retrieval & RAG         🟢 Core    (Week 5–6)   The most-asked applied skill
-Phase 3 — Agents & Tool Use       🟢 Core    (Week 7)     Closest to your automation work
-Phase 4 — Evaluation & Evals      🟢 Core    (Week 8)     How you prove a system works
-Phase 5 — Fine-tuning & PEFT      🔵 Depth   (Week 10)    Mostly: when NOT to fine-tune
-Phase 6 — Inference & Serving     🟢 Core    (Week 9)     Latency, cost, deployment
-Phase 7 — Safety & Alignment      🔵 Depth   (Week 12)    Talk to it without jargon
+Wk 1   Phase 0.1–0.4  Applied Foundations   🟢  → triage classifier (structured JSON)
+Wk 2   Phase 3.1–3.2  Agent loop + tools    🟢  → triage agent from scratch (read-only tools)
+Wk 3   Phase 0.5, 2.1–2.4  Embeddings + RAG 🟢  → search_runbooks tool
+Wk 4   Phase 4.3/4.4/4.6, 3.7, 7.4  Evals + guardrails 🟢  → 🏁 Project 1 shipped
+Wk 5   Phase 3.5      LangGraph + HITL      🟢  → approval-gated action tools
+Wk 6   Phase 3.6, 3.3, 2.5–2.7  MCP, memory, better RAG 🟢
+Wk 7   Phase 3.4      Multi-agent           🟢  → FastAPI + Docker + tracing
+Wk 8   Phase 4.1–4.2  Eval depth            🟢  → 🏁 Project 2 shipped
+Wk 9   Phase 1, 6     Internals + serving   🔵/🟢 interview depth
+Wk 10  Phase 5        Fine-tuning           🔵  mostly: when NOT to fine-tune
+Wk 11  Phase 7        Safety & governance   🔵  applied to agents that act on prod
 ```
+
+**Projects these phases feed:**
+1. **AI Incident-Triage Agent** (suggest-only): reads a ticket, classifies it, finds similar incidents + runbooks, and posts a cited suggestion.
+2. **Guarded Remediation Agent**: an AI decision layer over the self-healing automation. It uses allowlisted actions, dry-run, human approval, an MCP server, and evals.
 
 ---
 
@@ -44,7 +53,7 @@ Phase 7 — Safety & Alignment      🔵 Depth   (Week 12)    Talk to it without
 | 0.4 | Structured outputs | JSON mode, schemas, parsing/validating model output, when the model "lies" |
 | 0.5 | Embeddings intuition | What an embedding is, cosine similarity, semantic search — the bridge to RAG |
 
-**Coding exercise:** Take one automation you already built with Copilot and rewrite the LLM call yourself from scratch (raw API, your own prompt, parse the JSON output). Understand every line.
+**Coding exercise:** `triage_classifier.py` takes a synthetic incident ticket and returns validated JSON (`category`, `severity`, `likely_component`, `confidence`) from a raw API call with your own prompt and a `pydantic` schema. Understand every line.
 
 ---
 
@@ -79,7 +88,7 @@ Phase 7 — Safety & Alignment      🔵 Depth   (Week 12)    Talk to it without
 | 2.6 | Hybrid search | BM25 + dense, fusion strategies |
 | 2.7 | RAG failure modes | Hallucination, lost in the middle, retrieval precision vs. recall |
 
-**Coding exercise:** Build a RAG pipeline from scratch — chunker → embedder → FAISS index → reranker → LLM call. No LangChain.
+**Coding exercise:** `search_runbooks` tool built from scratch: chunker → embedder → FAISS/Chroma index → (Wk 6) reranker, over ~20 sanitized runbooks. No LangChain. The agent must cite the runbook it used.
 
 ---
 
@@ -97,7 +106,11 @@ Phase 7 — Safety & Alignment      🔵 Depth   (Week 12)    Talk to it without
 | 3.6 | MCP architecture | Protocol structure, resource/tool/prompt primitives, server authoring |
 | 3.7 | Agentic failure modes | Tool hallucination, infinite loops, context window exhaustion |
 
-**Coding exercise:** Build a ReAct agent from scratch (no framework) with tool calling and a two-step reasoning chain.
+**Coding exercises (in order):**
+1. **Wk 2:** `triage_agent.py` is a ReAct agent from scratch (no framework) with read-only tools: `get_ticket`, `get_service_status` (mock), and `find_similar_incidents`. Include max steps and tool-error handling.
+2. **Wk 5:** port to LangGraph and add `restart_service` (dry-run) + `add_ticket_note` behind a human-approval interrupt.
+3. **Wk 6:** expose the ops tools as an **MCP server** and call them from an MCP client.
+4. **Wk 7:** split into triage → remediation agents under a supervisor. Serve with FastAPI + Docker and add tracing.
 
 ---
 
@@ -114,7 +127,7 @@ Phase 7 — Safety & Alignment      🔵 Depth   (Week 12)    Talk to it without
 | 4.5 | RAG-specific evals | RAGAS — faithfulness, answer relevance, context precision/recall |
 | 4.6 | Agent evals | Task completion rate, tool call accuracy, trajectory evaluation |
 
-**Coding exercise:** Write an LLM-as-judge eval harness for a RAG pipeline — faithfulness + answer relevance, outputting a scored report.
+**Coding exercise:** `agent_evals.py` runs the triage agent over a 30-ticket golden set and reports classification accuracy, correct-runbook hit rate, tool-call accuracy, and LLM-as-judge faithfulness of the suggested fix. Extend it in Wk 8 to trajectory checks for the remediation agent: right action, approval requested, stopped when it should.
 
 ---
 
@@ -181,13 +194,15 @@ Start a session: **`AI: Phase X.Y`** (e.g., `AI: Phase 0.1`)
 
 ## Progress Tracker
 
+Rows are in **build order**, not phase-number order.
+
 | Phase | Priority | Sessions | Status |
 |-------|----------|----------|--------|
 | 0 — Applied Foundations | 🟢 Core | 0.1 · 0.2 · 0.3 · 0.4 · 0.5 | ⬜ Not started |
-| 1 — LLM Internals | 🔵 Depth | 1.1 · 1.2 · 1.3 · 1.4 · 1.5 · 1.6 | ⬜ Not started |
-| 2 — Retrieval & RAG | 🟢 Core | 2.1 · 2.2 · 2.3 · 2.4 · 2.5 · 2.6 · 2.7 | ⬜ Not started |
 | 3 — Agents & Tool Use | 🟢 Core | 3.1 · 3.2 · 3.3 · 3.4 · 3.5 · 3.6 · 3.7 | ⬜ Not started |
+| 2 — Retrieval & RAG | 🟢 Core | 2.1 · 2.2 · 2.3 · 2.4 · 2.5 · 2.6 · 2.7 | ⬜ Not started |
 | 4 — Evaluation & Evals | 🟢 Core | 4.1 · 4.2 · 4.3 · 4.4 · 4.5 · 4.6 | ⬜ Not started |
+| 1 — LLM Internals | 🔵 Depth | 1.1 · 1.2 · 1.3 · 1.4 · 1.5 · 1.6 | ⬜ Not started |
 | 5 — Fine-tuning & PEFT | 🔵 Depth | 5.1 · 5.2 · 5.3 · 5.4 · 5.5 · 5.6 · 5.7 | ⬜ Not started |
 | 6 — Inference & Serving | 🟢 Core | 6.1 · 6.2 · 6.3 · 6.4 · 6.5 · 6.6 · 6.7 | ⬜ Not started |
 | 7 — Safety & Alignment | 🔵 Depth | 7.1 · 7.2 · 7.3 · 7.4 · 7.5 · 7.6 | ⬜ Not started |
