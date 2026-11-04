@@ -1,6 +1,6 @@
 # System Design Interview Plan
 
-Part of the [12-week roadmap](../ROADMAP.md), which governs scheduling (the week labels below are the original standalone pacing). For the **AI/ML engineer** target, **Phase 7 (ML/AI System Design)** is the round you'll most likely face — don't skip it.
+Part of the [roadmap](../ROADMAP.md), which governs scheduling: this track starts in **Stage 4**, focusing on Phases 1, 4 and 7 (the week labels below are the original standalone pacing). For the **AI Engineer** target, **Phase 7 (ML/AI System Design)** is the round you'll most likely face — don't skip it.
 
 ---
 

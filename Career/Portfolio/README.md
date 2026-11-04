@@ -18,7 +18,7 @@ Your GitHub is your live resume for engineering roles.
 
 ## LinkedIn
 
-- [ ] Headline that states your target: e.g., "Engineer | Building applied AI/ML | ex-Manufacturing Engineer"
+- [ ] Headline that states your target: e.g., "Site Reliability Engineer → AI Engineer | Building LLM apps, RAG & agents"
 - [ ] About section telling your transition story (pull toward AI, evidence of building)
 - [ ] Projects & skills listed; link your GitHub and portfolio
 - [ ] Post occasionally about what you're learning/building — visibility compounds
@@ -43,6 +43,6 @@ Keep it simple. A clean GitHub profile README can *be* your portfolio — don't 
 
 Anyone landing on your profiles in 30 seconds should conclude:
 
-> "This person came from manufacturing engineering, taught themselves AI, and has actually shipped LLM/RAG/agent projects. They understand the fundamentals and they build."
+> "This person came from manufacturing IT and SRE work, taught themselves AI engineering, and has actually shipped LLM/RAG/agent projects. They understand the fundamentals and they build."
 
 Every item above should reinforce that sentence.

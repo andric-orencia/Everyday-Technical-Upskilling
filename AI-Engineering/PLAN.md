@@ -1,49 +1,61 @@
 # AI Engineering Interview Plan
 
-Part of the [12-week roadmap](../ROADMAP.md). This is the **core track** for the target role: **applied AI/ML engineer**.
+Part of the [roadmap](../ROADMAP.md): this track starts in **Stage 2**, after the Stage 1 Python gate. It's the **core track** for the target role: **AI Engineer** (applied, any industry).
 
 ---
 
 ## Objective
 
-Close the biggest resume gap first. My current automation (self-healing stopped-service recovery via ServiceNow + Teams) is **rule-based, not AI**. So this track is **agent-first**: build and ship real LLM agents on top of the ops work I already know, then add interview depth. Every session: concept → interviewer probes → your answer → critique → apply it to the week's agent build.
+Close the biggest resume gap: my current automation (self-healing stopped-service recovery via ServiceNow + Teams) is **rule-based, not AI**. This track builds the core AI-engineering patterns in the order employers screen for them (**structured output → RAG → agents → evals → deployment**), ships each one as a portfolio project, then adds interview depth. Every session: concept → interviewer probes → your answer → critique → apply it to the current project.
 
-**Role focus:** This plan is tuned for *applied* AI/ML engineering (LLM products, RAG, agents, automation), **not** AI-research/labs roles. Phases are tagged:
+**Role focus:** This plan is tuned for *applied* AI engineering (LLM products, RAG, agents, automation), **not** AI-research/labs roles. Phases are tagged:
 
 - 🟢 **Core** — do these; they're the heart of the role and get asked constantly.
 - 🔵 **Depth** — understand enough to discuss confidently; go deep only if a target role demands it.
 
-**No CS background?** Start with **Phase 0** and keep the [`Foundations/`](../Foundations/) track running in parallel. The goal is genuine understanding, so you can explain what you build — not memorized answers.
+**No CS background?** Start here only after passing the **Stage 1 gate** (Python I can write myself) in [`Foundations/`](../Foundations/), then begin with **Phase 0**. The goal is genuine understanding, so you can explain what you build — not memorized answers.
 
 ---
 
 ## Phase Map
 
-Phase numbers are kept for reference, but the **order you do them in is agent-driven**. Sessions are pulled in when the agent build needs them:
+Phase numbers are kept for reference, but the **order you do them in follows the [roadmap](../ROADMAP.md) stages**. Sessions are pulled in when the current project needs them:
 
 ```
-Wk 1   Phase 0.1–0.4  Applied Foundations   🟢  → triage classifier (structured JSON)
-Wk 2   Phase 3.1–3.2  Agent loop + tools    🟢  → triage agent from scratch (read-only tools)
-Wk 3   Phase 0.5, 2.1–2.4  Embeddings + RAG 🟢  → search_runbooks tool
-Wk 4   Phase 4.3/4.4/4.6, 3.7, 7.4  Evals + guardrails 🟢  → 🏁 Project 1 shipped
-Wk 5   Phase 3.5      LangGraph + HITL      🟢  → approval-gated action tools
-Wk 6   Phase 3.6, 3.3, 2.5–2.7  MCP, memory, better RAG 🟢
-Wk 7   Phase 3.4      Multi-agent           🟢  → FastAPI + Docker + tracing
-Wk 8   Phase 4.1–4.2  Eval depth            🟢  → 🏁 Project 2 shipped
-Wk 9   Phase 1, 6     Internals + serving   🔵/🟢 interview depth
-Wk 10  Phase 5        Fine-tuning           🔵  mostly: when NOT to fine-tune
-Wk 11  Phase 7        Safety & governance   🔵  applied to agents that act on prod
+Stage 2 → Project 1: Ticket Triage
+  Phase 0.1–0.4        Applied Foundations          🟢  → triage_classifier.py (validated JSON)
+  Phase 4.3            Eval dataset design          🟢  → classifier_evals.py (50-ticket golden set)
+
+Stage 3 → Project 2: Docs Q&A Assistant (RAG)
+  Phase 0.5, 2.1–2.4   Embeddings + RAG             🟢  → docs_rag.py (cited answers)
+  Phase 4.5            RAG evals                    🟢  → hit rate + faithfulness
+
+Stage 3 → Project 3: Incident-Triage Agent (suggest-only)
+  Phase 3.1–3.2, 3.7   Agent loop, tools, failures  🟢  → triage_agent.py
+  Phase 4.4, 4.6, 7.4  Judges, agent evals, red-team 🟢 → agent_evals.py
+  + FastAPI + Docker + tracing
+
+Stage 4 → Interview depth
+  Phase 1, 6           Internals + serving          🔵/🟢
+  Phase 2.5–2.7, 4.1–4.2  Better RAG + eval depth   🟢
+  Phase 5              Fine-tuning                  🔵  mostly: when NOT to fine-tune
+  Phase 7              Safety & governance          🔵
+
+Stretch → Project 4: Guarded Remediation Agent
+  Phase 3.3–3.6        Memory, multi-agent, LangGraph + HITL, MCP  🟢
 ```
 
-**Projects these phases feed:**
-1. **AI Incident-Triage Agent** (suggest-only): reads a ticket, classifies it, finds similar incidents + runbooks, and posts a cited suggestion.
-2. **Guarded Remediation Agent**: an AI decision layer over the self-healing automation. It uses allowlisted actions, dry-run, human approval, an MCP server, and evals.
+**Projects these phases feed** (details in [`Projects/`](../Projects/README.md)):
+1. **Ticket Triage** (Stage 2): any free-text ticket → validated JSON (category, priority, summary, team, confidence), measured on a golden set.
+2. **Docs Q&A Assistant** (Stage 3): RAG over a document set, with citations and "I don't know" when retrieval is weak.
+3. **Incident-Triage Agent** (Stage 3, suggest-only): read-only tools plus runbook search from Project 2, served with FastAPI + Docker.
+4. **Guarded Remediation Agent** (stretch): an AI decision layer over the self-healing automation, with allowlisted actions, dry-run, human approval, an MCP server, and trajectory evals.
 
 ---
 
 ## Phase 0 — Applied Foundations 🟢
 
-**Goal:** Comfortably use LLMs from code and get good output. This is where you start — it builds directly on what you already do at work.
+**Goal:** Comfortably use LLMs from code and get reliable output. This is where you start once Stage 1 is done.
 
 | Session | Topic | Key Concepts |
 |---------|-------|-------------|
@@ -53,7 +65,7 @@ Wk 11  Phase 7        Safety & governance   🔵  applied to agents that act on 
 | 0.4 | Structured outputs | JSON mode, schemas, parsing/validating model output, when the model "lies" |
 | 0.5 | Embeddings intuition | What an embedding is, cosine similarity, semantic search — the bridge to RAG |
 
-**Coding exercise:** `triage_classifier.py` takes a synthetic incident ticket and returns validated JSON (`category`, `severity`, `likely_component`, `confidence`) from a raw API call with your own prompt and a `pydantic` schema. Understand every line.
+**Coding exercise:** `triage_classifier.py` takes a synthetic support ticket and returns validated JSON (`category`, `priority`, `summary`, `team`, `confidence`) from a raw API call with your own prompt and a `pydantic` schema. Understand every line. This is the core of Project 1.
 
 ---
 
@@ -88,7 +100,7 @@ Wk 11  Phase 7        Safety & governance   🔵  applied to agents that act on 
 | 2.6 | Hybrid search | BM25 + dense, fusion strategies |
 | 2.7 | RAG failure modes | Hallucination, lost in the middle, retrieval precision vs. recall |
 
-**Coding exercise:** `search_runbooks` tool built from scratch: chunker → embedder → FAISS/Chroma index → (Wk 6) reranker, over ~20 sanitized runbooks. No LangChain. The agent must cite the runbook it used.
+**Coding exercise:** `docs_rag.py` built from scratch: chunker → embedder → FAISS/Chroma index → cited answer, over ~20 public or synthetic documents. No LangChain. It must cite its sources and say "I don't know" when retrieval is weak. This becomes Project 2, and later Project 3's `search_runbooks` tool. Add a reranker (2.5) in Stage 4.
 
 ---
 
@@ -107,10 +119,10 @@ Wk 11  Phase 7        Safety & governance   🔵  applied to agents that act on 
 | 3.7 | Agentic failure modes | Tool hallucination, infinite loops, context window exhaustion |
 
 **Coding exercises (in order):**
-1. **Wk 2:** `triage_agent.py` is a ReAct agent from scratch (no framework) with read-only tools: `get_ticket`, `get_service_status` (mock), and `find_similar_incidents`. Include max steps and tool-error handling.
-2. **Wk 5:** port to LangGraph and add `restart_service` (dry-run) + `add_ticket_note` behind a human-approval interrupt.
-3. **Wk 6:** expose the ops tools as an **MCP server** and call them from an MCP client.
-4. **Wk 7:** split into triage → remediation agents under a supervisor. Serve with FastAPI + Docker and add tracing.
+1. **Stage 3:** `triage_agent.py` is a ReAct agent from scratch (no framework) with read-only tools: `get_ticket`, `get_service_status` (mock), `find_similar_incidents`, and `search_runbooks` (from Project 2). Include max steps and tool-error handling. Serve it with FastAPI + Docker and add tracing. This is Project 3.
+2. **Stretch:** port to LangGraph and add `restart_service` (dry-run) + `add_ticket_note` behind a human-approval interrupt.
+3. **Stretch:** expose the ops tools as an **MCP server** and call them from an MCP client.
+4. **Stretch:** split into triage → remediation agents under a supervisor.
 
 ---
 
@@ -127,7 +139,7 @@ Wk 11  Phase 7        Safety & governance   🔵  applied to agents that act on 
 | 4.5 | RAG-specific evals | RAGAS — faithfulness, answer relevance, context precision/recall |
 | 4.6 | Agent evals | Task completion rate, tool call accuracy, trajectory evaluation |
 
-**Coding exercise:** `agent_evals.py` runs the triage agent over a 30-ticket golden set and reports classification accuracy, correct-runbook hit rate, tool-call accuracy, and LLM-as-judge faithfulness of the suggested fix. Extend it in Wk 8 to trajectory checks for the remediation agent: right action, approval requested, stopped when it should.
+**Coding exercises:** `classifier_evals.py` (Stage 2) runs the Project 1 classifier over a 50-ticket golden set and reports accuracy, cost and latency. `agent_evals.py` (Stage 3) runs the triage agent over a golden set and reports tool-call accuracy, correct-runbook hit rate, correct "escalate" rate, and LLM-as-judge faithfulness of the suggested fix. Stretch: trajectory checks for the remediation agent (right action, approval requested, stopped when it should).
 
 ---
 
@@ -194,15 +206,15 @@ Start a session: **`AI: Phase X.Y`** (e.g., `AI: Phase 0.1`)
 
 ## Progress Tracker
 
-Rows are in **build order**, not phase-number order.
+Rows are in **build order** (by roadmap stage), not phase-number order. Phase 4 spans Stages 2–4.
 
 | Phase | Priority | Sessions | Status |
 |-------|----------|----------|--------|
 | 0 — Applied Foundations | 🟢 Core | 0.1 · 0.2 · 0.3 · 0.4 · 0.5 | ⬜ Not started |
-| 3 — Agents & Tool Use | 🟢 Core | 3.1 · 3.2 · 3.3 · 3.4 · 3.5 · 3.6 · 3.7 | ⬜ Not started |
 | 2 — Retrieval & RAG | 🟢 Core | 2.1 · 2.2 · 2.3 · 2.4 · 2.5 · 2.6 · 2.7 | ⬜ Not started |
+| 3 — Agents & Tool Use | 🟢 Core | 3.1 · 3.2 · 3.3 · 3.4 · 3.5 · 3.6 · 3.7 | ⬜ Not started |
 | 4 — Evaluation & Evals | 🟢 Core | 4.1 · 4.2 · 4.3 · 4.4 · 4.5 · 4.6 | ⬜ Not started |
+| 6 — Inference & Serving | 🟢 Core | 6.1 · 6.2 · 6.3 · 6.4 · 6.5 · 6.6 · 6.7 | ⬜ Not started |
 | 1 — LLM Internals | 🔵 Depth | 1.1 · 1.2 · 1.3 · 1.4 · 1.5 · 1.6 | ⬜ Not started |
 | 5 — Fine-tuning & PEFT | 🔵 Depth | 5.1 · 5.2 · 5.3 · 5.4 · 5.5 · 5.6 · 5.7 | ⬜ Not started |
-| 6 — Inference & Serving | 🟢 Core | 6.1 · 6.2 · 6.3 · 6.4 · 6.5 · 6.6 · 6.7 | ⬜ Not started |
 | 7 — Safety & Alignment | 🔵 Depth | 7.1 · 7.2 · 7.3 · 7.4 · 7.5 · 7.6 | ⬜ Not started |

@@ -1,15 +1,15 @@
 # Projects
 
-Portfolio projects are how a career-changer proves capability without a CS degree. For AI/ML engineering, **a few well-documented, deployed projects often matter more than your resume.** They give interviewers something concrete to ask about — and give you real stories to tell.
+Portfolio projects are how a career-changer proves capability without a CS degree. For AI engineering, **a few well-documented, deployed projects often matter more than your resume.** They give interviewers something concrete to ask about — and give you real stories to tell.
 
-> My strongest work is a **rule-based** self-healing automation: ServiceNow + Teams stopped-service recovery with dependency-order restarts and change-window checks. It handled 696 alerts and auto-resolved 101 incidents, cutting resolution from 5 min to 10 s. That's great automation, but **not AI**. The first two projects add a real AI/agent layer on top of that domain, so the AI claim on my resume has proof behind it.
+> My strongest work is a **rule-based** self-healing automation: ServiceNow + Teams stopped-service recovery with dependency-order restarts and change-window checks. It handled 696 alerts and auto-resolved 101 incidents, cutting resolution from 5 min to 10 s. That's great automation, but **not AI**. These projects add the proof: the first two are **industry-agnostic** patterns every company needs (structured output, RAG), and the third applies agents to the domain I know best (incidents and operations).
 
 ---
 
 ## Strategy
 
 - **Quality over quantity.** 2–3 solid, finished, deployed projects beat 10 half-built ones.
-- **Agents first.** The target role (AI automation engineer) is screened on LLM agents, tool use, retrieval, and evals, so those come before anything else.
+- **Core patterns, in order.** AI-engineer roles are screened on structured output, retrieval (RAG), agents/tool use, and evals. The projects follow that order, and each one reuses the last.
 - **Document everything.** A great README (problem, approach, architecture, results, tradeoffs) is half the value.
 - **Ship it.** A live demo or a repo others can run beats screenshots. Deploy where you can.
 - **Tell the story.** Each project should become a STAR behavioral answer (see [`../Career/Behavioral`](../Career/Behavioral/)).
@@ -19,24 +19,26 @@ Use [`PROJECT-TEMPLATE.md`](./PROJECT-TEMPLATE.md) as the starting README for ea
 
 ---
 
-## Priority projects (agent-first roadmap)
+## Priority projects (in roadmap order)
 
-| # | Project | What it does | Skills demonstrated | Roadmap fit |
-|---|---------|--------------|---------------------|-------------|
-| 1 | **AI Incident-Triage Agent** (suggest-only) | Reads a new ticket, classifies it, finds similar past incidents and the right runbook, and posts a cited suggested fix (Teams-style message). It never takes action. | LLM API, structured output, tool calling, ReAct loop, RAG, evals, guardrails | 🏁 Ship Wk 4 |
-| 2 | **Guarded Remediation Agent** | An AI decision layer over the self-healing automation. It picks from **allowlisted** actions (restart in dependency order, add a ticket note), runs dry-run by default, requires human approval for anything risky, and logs every step. Its tools are exposed via an MCP server. | LangGraph, human-in-the-loop, MCP, memory, multi-agent, FastAPI + Docker, tracing, trajectory evals | 🏁 Ship Wk 8 |
+| # | Project | What it does | Skills demonstrated | Stage |
+|---|---------|--------------|---------------------|-------|
+| 1 | **Ticket Triage** | Takes any free-text support ticket (IT, customer service, HR) and returns validated JSON: category, priority, summary, team, confidence. Logs cost and latency per ticket. | LLM API, prompting, structured output (`pydantic`), retries/timeouts, golden test set | 🏁 Stage 2 |
+| 2 | **Docs Q&A Assistant** (RAG) | Answers questions over a document set (public docs, or synthetic handbooks/runbooks), cites its sources, and says "I don't know" when retrieval is weak. | Embeddings, chunking, vector search, citations, retrieval + faithfulness evals | 🏁 Stage 3 |
+| 3 | **Incident-Triage Agent** (suggest-only) | Reads a new incident, calls read-only tools (ticket lookup, service status, similar incidents, runbook search from Project 2), and posts a cited suggested fix. It never takes action. Served as an API. | Tool calling, agent loop from scratch, guardrails, FastAPI + Docker, tracing, agent evals | 🏁 Stage 3 |
 
-**Eval targets to report in each README** (measure them, don't guess): classification accuracy, correct-runbook hit rate, tool-call accuracy, % of cases where the agent correctly said "not sure / escalate", and cost + latency per ticket.
+**Eval numbers to report in each README** (measure them, don't guess): accuracy (P1), retrieval hit rate and answer faithfulness (P2), tool-call accuracy and % of cases where the agent correctly said "not sure / escalate" (P3), and cost + latency per request (all).
 
 ## Stretch / later ideas
 
 | # | Project | Skills demonstrated |
 |---|---------|---------------------|
-| 3 | **AI root-cause draft**: summarizes logs + ticket history into a draft root-cause/problem record for an engineer to review | Summarization, long-context vs. RAG, LLM-as-judge |
-| 4 | **Work pilot** (with approval, on company-approved platforms): run Project 1 suggest-only in the real triage workflow and report real metrics | Production AI, change management, stakeholder buy-in, which is project-lead evidence too |
-| 5 | **Manufacturing-domain AI**: e.g., an LLM assistant over maintenance logs, or anomaly triage from machine data | Domain differentiation, applied ML |
+| 4 | **Guarded Remediation Agent**: an AI decision layer over the self-healing automation. It picks from **allowlisted** actions, runs dry-run by default, requires human approval for anything risky, logs every step, and exposes its tools via an MCP server | LangGraph, human-in-the-loop, MCP, memory, trajectory evals |
+| 5 | **AI root-cause draft**: summarizes logs + ticket history into a draft root-cause/problem record for an engineer to review | Summarization, long-context vs. RAG, LLM-as-judge |
+| 6 | **Work pilot** (with approval, on company-approved platforms): run Project 3 suggest-only in the real triage workflow and report real metrics | Production AI, change management, stakeholder buy-in, which is project-lead evidence too |
+| 7 | **Domain AI** (any industry): e.g., an LLM assistant over maintenance logs, or anomaly triage from machine data | Domain differentiation, applied ML |
 
-> **Tip:** Your edge is that few candidates can speak fluently about running **2,000+ production servers in manufacturing** *and* building AI agents that act on them safely. Lean into that.
+> **Tip:** Your edge is that few AI-engineering candidates have run **2,000+ production servers** on call. Reliability, monitoring, incident response and safe automation are exactly what LLM apps need in production, so show them in every project (evals, logging, failure modes).
 
 ---
 

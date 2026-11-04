@@ -1,6 +1,6 @@
 # Math for Machine Learning
 
-You do **not** need a math degree to be an applied AI/ML engineer. You need enough intuition to understand embeddings, attention, similarity, and training — and to not freeze when an interviewer mentions a gradient. As a manufacturing engineer you already have real calculus, statistics, and linear-algebra exposure; this is about reconnecting it to ML.
+You do **not** need a math degree to be an applied AI engineer. You need enough intuition to understand embeddings, attention, similarity, and training — and to not freeze when an interviewer mentions a gradient. With a mechatronics/manufacturing background you already have real calculus, statistics, and linear-algebra exposure; this is about reconnecting it to ML.
 
 > Best resource: [3Blue1Brown](https://www.youtube.com/@3blue1brown) — *Essence of Linear Algebra* and *Essence of Calculus*. Watch for intuition, not proofs.
 
@@ -44,9 +44,9 @@ If you can explain that paragraph in your own words, you have enough math to sta
 
 ## How much time to spend
 
-**Light.** For the 3-month applied track, budget a few hours total across Weeks 4–5, driven by need:
-- Do the **linear-algebra** intuition first (embeddings depend on it).
-- Touch **probability/softmax** when AI-Eng covers sampling/attention.
-- Understand **gradient descent** conceptually when fine-tuning comes up.
+**Light.** For the applied AI-engineer track, budget a few hours in total, driven by need:
+- Do the **linear-algebra** intuition first, in Stage 3 (embeddings depend on it).
+- Touch **probability/softmax** in Stage 4, when AI-Eng covers sampling/attention.
+- Understand **gradient descent** conceptually when fine-tuning comes up (Stage 4–5).
 
-Go deeper later only if you target research-heavy roles. For applied AI/ML engineering, intuition is enough.
+Go deeper later only if you target research-heavy roles. For applied AI engineering, intuition is enough.

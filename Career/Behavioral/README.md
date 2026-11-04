@@ -66,4 +66,4 @@ R: <result with numbers + what you learned>
 1. Write each story with the template.
 2. Say it out loud and time it (~2 min).
 3. Trim filler; sharpen the numbers.
-4. Do a mock with a friend or record yourself in Week 12.
+4. Do a mock with a friend or record yourself in Stage 4, and again before any real interview.

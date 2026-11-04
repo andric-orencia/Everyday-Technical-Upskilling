@@ -1,6 +1,6 @@
 # AI Product Owner / Head of Product — Upskilling Plan
 
-A side-track alongside the main [AI/ML Engineer roadmap](../../ROADMAP.md), for a specific role target:
+A side-track alongside the main [AI Engineer roadmap](../../ROADMAP.md), for a specific role target:
 
 > **AI Product Owner / Head of Product** — turning product vision, customer feedback, and roadmap priorities into clear, delivery-ready work packages for an AI-first product team. Not a traditional PM who only tracks tasks — needs to understand product delivery, sprint planning, acceptance criteria, release management, documentation, and how to prep work so AI-assisted developers and QA can execute effectively.
 

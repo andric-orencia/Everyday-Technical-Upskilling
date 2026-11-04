@@ -82,11 +82,11 @@ The concepts a CS degree assumes you have. Interviewers *expect* these — and t
 
 ---
 
-## Study order for the 3-month plan
+## Study order (by roadmap stage)
 
-1. **Week 1:** Command line + Git (you need these to work at all).
-2. **Week 2:** Big-O + memory model (feeds DSA).
-3. **Week 3:** Networking/web + databases/SQL (feeds AI apps & system design).
-4. **Ongoing:** OS concepts as they come up in AI-Eng and System Design.
+1. **Stage 1:** Command line + Git (you need these to work at all), plus Big-O basics (why a `dict` lookup is fast).
+2. **Stage 2:** Networking/web: HTTP, APIs, JSON (every LLM call is an HTTP request).
+3. **Stage 3:** Databases/SQL (feeds AI apps & system design).
+4. **Stage 4:** Big-O depth + memory model (feeds DSA rounds), and OS concepts as they come up in serving and system design.
 
 Write your own plain-language notes under each section as you learn — teaching it back is how you lock it in.

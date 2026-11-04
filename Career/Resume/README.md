@@ -1,6 +1,6 @@
 # Resume
 
-A resume that turns "manufacturing engineer teaching myself AI" into "engineer ready for an AI/ML role." Your background is an asset — most candidates can't pair real operations experience with AI skills.
+A resume that turns "SRE in manufacturing IT, learning AI" into "engineer ready for an AI engineering role." Your background is an asset — most candidates can't pair real production-operations experience with AI skills.
 
 > Keep the working draft here (e.g., `resume.md` or a link to your doc). This README is the guide.
 
@@ -9,7 +9,7 @@ A resume that turns "manufacturing engineer teaching myself AI" into "engineer r
 ## Principles for a career-changer
 
 1. **Lead with what's relevant now.** Put a short summary and your AI/technical projects near the top; don't bury them under old job titles.
-2. **Translate, don't hide, your past.** Manufacturing engineering taught you systems thinking, root-cause analysis, process optimization, reliability, and working with data — all of which map onto engineering roles.
+2. **Translate, don't hide, your past.** Manufacturing IT and SRE work taught you systems thinking, root-cause analysis, reliability, automation, and working with data — all of which map onto AI-engineering roles.
 3. **Quantify everything.** Numbers are the language of both manufacturing and engineering. "Reduced unplanned downtime 30% via an automated remediation script" beats "wrote automation scripts."
 4. **Show, don't claim.** Link to GitHub and live projects. Evidence > adjectives.
 5. **One page.** Ruthless editing. Every line earns its place.
@@ -20,11 +20,11 @@ A resume that turns "manufacturing engineer teaching myself AI" into "engineer r
 ## Suggested structure
 
 ```
-Name · target title (e.g., "AI/ML Engineer") · email · GitHub · LinkedIn · portfolio
+Name · target title (e.g., "AI Engineer") · email · GitHub · LinkedIn · portfolio
 
 SUMMARY (2–3 lines)
-  Engineer transitioning from manufacturing into AI/ML, already building
-  production LLM automation. Strong in Python, RAG, and applied AI systems.
+  Site Reliability Engineer moving into AI engineering. Ships production
+  automation and builds LLM apps, RAG and agents. Strong in Python and reliability.
 
 SKILLS
   Languages: Python, SQL
@@ -37,9 +37,9 @@ PROJECTS  ← your differentiator; put it high
   (2–3 projects, quantified, with links)
 
 EXPERIENCE
-  Manufacturing Engineer — reframed with transferable + AI-relevant wins
-  • Built LLM-based automation that … (impact, %)
-  • Analyzed process data to … (data/analysis angle)
+  Site Reliability Engineer (manufacturing IT) — reframed with transferable + AI-relevant wins
+  • Built self-healing automation that … (impact, %)
+  • Analyzed incident/alert data to … (data/analysis angle)
 
 EDUCATION / CERTIFICATIONS
   Degree + any AI/ML courses or certs you complete
@@ -62,11 +62,11 @@ EDUCATION / CERTIFICATIONS
 
 ## Closing the "is this actually AI?" gap
 
-An outside-interviewer review (Oct 2026) rated the resume **High** for SRE/automation roles but only **Low–Medium** for AI automation roles. The self-healing automation is rule-based, and nothing yet shows hands-on LLM/agent work. The fix is shipping the agent projects in the [roadmap](../../ROADMAP.md), not rewording.
+An outside-interviewer review (Oct 2026) rated the resume **High** for SRE/automation roles but only **Low–Medium** for AI automation roles. The self-healing automation is rule-based, and nothing yet shows hands-on LLM/agent work. The fix is shipping the AI projects in the [roadmap](../../ROADMAP.md), not rewording.
 
 - **Don't** describe the current self-healing tool as "AI" or "agentic."
-- **After Project 1 ships**, add a Projects line like: *"AI Incident-Triage Agent: LLM agent that classifies tickets and retrieves runbooks via RAG; X% classification accuracy and Y% correct-runbook hit rate on a 30-ticket eval set (Python, tool calling, FAISS)."* Fill in the real numbers.
-- **After Project 2 ships**, add the guarded remediation agent (human-in-the-loop, MCP, evals).
+- **After Project 1 ships**, add a Projects line like: *"Ticket Triage: LLM service that turns free-text support tickets into validated JSON (category, priority, team); X% accuracy on a 50-ticket eval set at $Y per 1,000 tickets (Python, pydantic)."* Fill in the real numbers.
+- **After Projects 2–3 ship**, add the RAG docs assistant (retrieval hit rate, faithfulness) and the incident-triage agent (tool calling, guardrails, FastAPI + Docker).
 - **If a work pilot is approved**, that becomes the strongest Experience bullet: real triage-time reduction on production incidents.
 
 ---

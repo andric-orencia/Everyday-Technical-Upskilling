@@ -8,15 +8,21 @@ Python is the language of AI/ML. Real fluency — not just "I can read it" — m
 
 ## Checklist
 
-Tick these off as you can use them *without looking them up*.
+| Mark | Meaning |
+|------|---------|
+| `[ ]` | Not started |
+| `[~]` | Practiced with help (predictions, hints, worked examples) |
+| `[✓]` | Passed a **cold check**: written from a blank file, with no hints or AI, on a later day |
+
+Untagged items are **Stage 1 essentials**: they're needed for the Stage 1 gate in the [roadmap](../../ROADMAP.md). Items tagged *→ Stage N* are learned just-in-time, in that stage. The method, review deck and session log are in [`COACHING.md`](./COACHING.md).
 
 ### Core language
 - [✓] Variables, types (`int`, `float`, `str`, `bool`, `None`)
-- [✓] String operations & f-strings
-- [✓] `if / elif / else`, boolean logic, truthiness
-- [✓] `for` / `while` loops, `range`, `enumerate`, `zip`
-- [ ] Functions: arguments, defaults, `*args`/`**kwargs`, return values
-- [ ] Scope: local vs. global, closures
+- [~] String operations & f-strings
+- [~] `if / elif / else`, boolean logic, truthiness
+- [~] `for` / `while` loops, `range`, `enumerate`, `zip`
+- [~] Functions: arguments, defaults, `*args`/`**kwargs`, return values
+- [ ] Scope: local vs. global, closures *(closures → Stage 3)*
 
 ### Data structures (know these cold — they're half of DSA)
 - [ ] `list` — indexing, slicing, methods, when it's O(n) vs O(1)
@@ -24,18 +30,18 @@ Tick these off as you can use them *without looking them up*.
 - [ ] `set` — membership, dedup, set operations
 - [ ] `tuple` — immutability, unpacking
 - [ ] List/dict/set **comprehensions**
-- [ ] `collections` — `defaultdict`, `Counter`, `deque`
-- [ ] `heapq` — priority queue for DSA
+- [ ] `collections` — `defaultdict`, `Counter`, `deque` *(`deque` → Stage 4)*
+- [ ] `heapq` — priority queue for DSA *(→ Stage 4)*
 
 ### Writing real code
-- [ ] Classes & objects (OOP): `__init__`, methods, `self`, dunder methods
+- [ ] Classes & objects (OOP): `__init__`, methods, `self`, dunder methods *(dunder methods → Stage 3)*
 - [ ] Error handling: `try/except/finally`, raising exceptions
 - [ ] Modules, imports, `if __name__ == "__main__"`
 - [ ] Type hints (`list[int]`, `Optional`, `dict[str, int]`)
 - [ ] Reading/writing files, working with JSON
-- [ ] Iterators, generators, `yield`, lazy evaluation
-- [ ] Decorators (at least how to read them)
-- [ ] `async` / `await` basics (matters for API-heavy AI apps)
+- [ ] Iterators, generators, `yield`, lazy evaluation *(→ Stage 3)*
+- [ ] Decorators (at least how to read them) *(→ Stage 3)*
+- [ ] `async` / `await` basics (matters for API-heavy AI apps) *(→ Stage 3)*
 
 ### Environment & tooling
 - [ ] Virtual environments (`venv`) — never install globally
@@ -44,10 +50,10 @@ Tick these off as you can use them *without looking them up*.
 - [ ] `pytest` basics — writing a simple test
 
 ### The data/AI stack (first touch)
-- [ ] `numpy` — arrays, vectorized ops, shapes (this is how ML data moves)
-- [ ] `pandas` — DataFrames, loading CSVs, filtering
-- [ ] Making an HTTP request (`requests` / `httpx`) — how you call LLM APIs
-- [ ] `fastapi` (later) — turning your code into a service
+- [ ] `numpy` — arrays, vectorized ops, shapes (this is how ML data moves) *(→ Stage 3)*
+- [ ] `pandas` — DataFrames, loading CSVs, filtering *(→ Stage 3, as needed)*
+- [ ] Making an HTTP request (`requests` / `httpx`) — how you call LLM APIs *(→ Stage 2)*
+- [ ] `fastapi` (later) — turning your code into a service *(→ Stage 3)*
 
 ---
 

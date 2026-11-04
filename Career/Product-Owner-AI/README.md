@@ -1,6 +1,8 @@
 # Product-Owner-AI
 
-A role-specific upskilling track for **AI Product Owner / Head of Product** positions — distinct from this repo's primary AI/ML Engineer roadmap. Parked here because it's a real opportunity worth preparing for in parallel, using skills (AI tool fluency, understanding dev workflows) that overlap with the main track.
+A role-specific upskilling track for **AI Product Owner / Head of Product** positions — distinct from this repo's primary AI Engineer roadmap. It uses skills (AI tool fluency, understanding dev workflows) that overlap with the main track.
+
+> ⏸️ **Parked as Plan B (2026-11-04).** With 3–4 hours a week, one career change gets all the time: the [AI Engineer roadmap](../../ROADMAP.md). These files stay so I can pick this up quickly if an AI Product Owner opportunity appears.
 
 - Curriculum: [`PLAN.md`](./PLAN.md)
 - Tracker: [`PROGRESS.md`](./PROGRESS.md)
