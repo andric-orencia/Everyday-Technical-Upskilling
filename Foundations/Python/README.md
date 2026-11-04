@@ -14,7 +14,7 @@ Tick these off as you can use them *without looking them up*.
 - [✓] Variables, types (`int`, `float`, `str`, `bool`, `None`)
 - [✓] String operations & f-strings
 - [✓] `if / elif / else`, boolean logic, truthiness
-- [ ] `for` / `while` loops, `range`, `enumerate`, `zip`
+- [✓] `for` / `while` loops, `range`, `enumerate`, `zip`
 - [ ] Functions: arguments, defaults, `*args`/`**kwargs`, return values
 - [ ] Scope: local vs. global, closures
 
